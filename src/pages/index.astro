@@ -1,7 +1,6 @@
 ---
 import { Navbar } from "@/components/Navbar";
 import TestimonialUser from "@/components/TestimonialUser";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,6 +10,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 import Layout from "@/layouts/Layout.astro";
 import { QuoteIcon } from "@radix-ui/react-icons";
@@ -243,5 +244,22 @@ import { PaintBucket } from "lucide-react";
         </Card>
       </div>
     </section>
+    <section class="mx-auto max-w-7xl px-4" id="CTA">
+      <h2 class="mt-20 px-2 text-center text-4xl [text-wrap:balance]">
+        Want to know more or work together? Reach out to us!
+      </h2>
+      <form
+        name="ReachOut"
+        class="mx-auto mt-20 flex max-w-3xl flex-col gap-5"
+        data-netlify="true"
+        method="POST"
+      >
+        <Input type="email" placeholder="Email" name="email" required />
+        <Input type="text" placeholder="Name" name="name" required />
+        <Textarea className="h-40" name="content" />
+        <Button type="submit">Submit</Button>
+      </form>
+    </section>
+    <footer></footer>
   </main>
 </Layout>
