@@ -1,15 +1,112 @@
 ---
+import { Navbar } from "@/components/Navbar";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 import Layout from "@/layouts/Layout.astro";
+import { PaintBucket } from "lucide-react";
 ---
 
 <Layout title="Dynamyx | Where we build things that matter.">
-  <main class="max-w-7xl px-4 mx-auto">
-    <h1 class="text-5xl md:text-6xl text-center mt-[20vh] [text-wrap:balance]">
-      Building things that <span class="text-blue-500">matter.</span> to make an
-      impact on the world.
-    </h1>
-    <p class="mt-8 text-xl text-center">
-      At Dynamyx, we are building solutions to problems that make an impact.
-    </p>
+  <Navbar client:load />
+  <main class="my-8">
+    <section id="hero" class="mx-auto min-h-[40vh] max-w-7xl px-4">
+      <h1
+        class="mt-[15vh] text-center text-5xl [text-wrap:balance] md:mt-[25vh] md:text-6xl"
+      >
+        Building things that <span class="text-blue-500">matter.</span> To make
+        an impact on the world.
+      </h1>
+      <p class="mx-auto mt-8 max-w-prose text-center text-xl">
+        At Dynamyx, we are building solutions to problems that matter. We are a
+        team of passionate developers, designers, and creators who are building
+        for the future.
+      </p>
+      <div class="mx-auto mt-10 flex w-full max-w-xs justify-evenly">
+        <Button>Learn More</Button>
+        <Button variant="secondary">Read the Blog</Button>
+      </div>
+    </section>
+    <section id="About" class="mx-auto max-w-7xl px-4">
+      <h2 class="mt-20 px-2 text-center text-4xl">What we are doing</h2>
+      <div class="mt-12 flex w-full grid-cols-2 flex-col gap-5 lg:grid">
+        <Card
+          className="col-span-2 flex w-full flex-col overflow-hidden lg:flex-row"
+        >
+          <img
+            src="https://placehold.co/600x400"
+            class="md:my-4 md:rounded-r-xl"
+            alt="placeholder"
+          />
+          <div>
+            <CardHeader>
+              <PaintBucket width={30} height={30} className="mb-5" />
+              <CardTitle className="text-2xl">Card Title</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                illum nihil et corrupti quasi, incidunt iste asperiores, modi
+                quas eaque iure deserunt voluptatum ratione, ea omnis natus qui
+                nesciunt explicabo.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button>Learn More</Button>
+            </CardFooter>
+          </div>
+        </Card>
+        <Card className="flex  w-full flex-col md:flex-row-reverse ">
+          <img
+            src="https://placehold.co/600x400"
+            class="rounded-tl-xl object-cover md:mt-5 md:w-1/2"
+            alt="placeholder"
+          />
+          <div>
+            <CardHeader>
+              <PaintBucket width={30} height={30} className="mb-5" />
+              <CardTitle className="text-2xl">Card Title</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                illum nihil et corrupti quasi, incidunt iste asperiores, modi
+                quas eaque iure deserunt voluptatum ratione, ea omnis natus qui
+                nesciunt explicabo.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button>Learn More</Button>
+            </CardFooter>
+          </div>
+        </Card>
+        <Card className="flex w-full ">
+          <div>
+            <CardHeader>
+              <PaintBucket width={30} height={30} className="mb-5" />
+              <CardTitle className="text-2xl">Card Title</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                illum nihil et corrupti quasi, incidunt iste asperiores, modi
+                quas eaque iure deserunt voluptatum ratione, ea omnis natus qui
+                nesciunt explicabo.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button>Learn More</Button>
+            </CardFooter>
+          </div>
+        </Card>
+      </div>
+    </section>
   </main>
 </Layout>

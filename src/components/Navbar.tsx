@@ -41,14 +41,19 @@ const components: { title: string; href: string }[] = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 flex justify-between max-w-7xl mx-auto p-4">
+    <header className="mx-auto flex max-w-7xl items-center justify-between p-8">
       <PaintBucketIcon />
       <NavigationMenu>
         <NavigationMenuList>
           {components.map((component) => (
             <NavigationMenuItem key={component.title + component.href}>
               <a href={component.href}>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle({
+                    className:
+                      "bg-transparent text-gray-900 dark:text-gray-100",
+                  })}
+                >
                   {component.title}
                 </NavigationMenuLink>
               </a>
