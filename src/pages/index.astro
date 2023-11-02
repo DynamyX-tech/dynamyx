@@ -21,6 +21,7 @@ import { PaintBucket } from "lucide-react";
 <Layout title="Dynamyx | Where we build things that matter.">
   <Navbar client:load />
   <main class="my-8">
+    <GridAnimations client:only />
     <section id="hero" class="mx-auto min-h-[40vh] max-w-7xl px-4">
       <h1
         class="mt-[15vh] text-center font-mono text-5xl [text-wrap:balance] md:mt-[25vh] md:text-6xl"
@@ -28,7 +29,6 @@ import { PaintBucket } from "lucide-react";
         Building things that <span class="text-blue-500">matter.</span> To make
         an impact on the world.
       </h1>
-      <GridAnimations client:only />
       <p class="mx-auto mt-8 max-w-prose text-center text-xl">
         At Dynamyx, we are building solutions to problems that matter. We are a
         team of passionate developers, designers, and creators who are building

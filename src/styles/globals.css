@@ -57,3 +57,17 @@
     @apply bg-background text-foreground;
   }
 }
+.autogrid {
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+  background-image: radial-gradient(
+    circle,
+    hsla(0, 100%, 60%, 1) 1%,
+    hsla(334, 100%, 55%, 1) 15%,
+    hsla(305, 100%, 32%, 1) 29%,
+    hsl(var(--background)) 50%
+  );
+  background-size: 70% 70%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
