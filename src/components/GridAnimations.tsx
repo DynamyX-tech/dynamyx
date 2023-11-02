@@ -3,20 +3,26 @@ import { useEffect, useState } from "react";
 const GridAnimations = () => {
   useEffect(() => {
     // use animate to update background image position css to mouse position
+    const grid = document.querySelector(".autogrid") as HTMLElement;
+    const mouseHandler = (e: MouseEvent) => {
+      const { x, y } = grid.getBoundingClientRect();
+      const { clientX, clientY } = e;
+      const xDiff = clientX - x;
+      const yDiff = clientY - y;
+      grid.style.backgroundPosition = `${xDiff / 3}px ${yDiff / 3}px`;
+    };
     const animate = () => {
-      const grid = document.querySelector(".autogrid") as HTMLElement;
       if (grid) {
-        const { x, y } = grid.getBoundingClientRect();
-        document.addEventListener("mousemove", (e) => {
-          const { clientX, clientY } = e;
-          const xDiff = clientX - x;
-          const yDiff = clientY - y;
-          grid.style.backgroundPosition = `${xDiff / 3}px ${yDiff / 3}px`;
-        });
+        document.addEventListener("mousemove", mouseHandler);
       }
       requestAnimationFrame(animate);
     };
-    requestAnimationFrame(animate);
+    const cleanID = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(cleanID);
+      document.removeEventListener("mousemove", mouseHandler);
+    };
   }, []);
   return (
     <div
