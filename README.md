@@ -1,6 +1,6 @@
-# Dynamyx Landing Page
+# DynamyX Landing Page
 
-This is the landing page for Dynamyx. It is built using [Astro](https://astro.build), React, and Tailwind CSS.
+This is the landing page for DynamyX. It is built using [Astro](https://astro.build), React, and Tailwind CSS.
 
 ## 🚀 Getting Started
 
