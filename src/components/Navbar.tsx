@@ -49,7 +49,11 @@ export function Navbar() {
         <NavList className="hidden md:flex" />
         <Sheet>
           <SheetTrigger className="md:hidden">
-            <Button variant="outline" size="icon">
+            <Button
+              variant="outline"
+              size="icon"
+              aria-label="open navigation sidebar"
+            >
               <HamburgerMenuIcon />
             </Button>
           </SheetTrigger>

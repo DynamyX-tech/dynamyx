@@ -254,9 +254,21 @@ import { PaintBucket } from "lucide-react";
         data-netlify="true"
         method="POST"
       >
-        <Input type="email" placeholder="Email" name="email" required />
-        <Input type="text" placeholder="Name" name="name" required />
-        <Textarea className="h-40" name="content" />
+        <Input
+          type="email"
+          placeholder="Email"
+          name="email"
+          aria-label="Email"
+          required
+        />
+        <Input
+          type="text"
+          placeholder="Name"
+          name="name"
+          required
+          aria-label="name"
+        />
+        <Textarea className="h-40" name="content" aria-label="Enter Content" />
         <Button type="submit">Submit</Button>
       </form>
     </section>
