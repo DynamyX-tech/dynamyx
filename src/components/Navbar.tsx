@@ -41,7 +41,10 @@ const components: { title: string; href: string }[] = [
 export function Navbar() {
   return (
     <header className="mx-auto flex max-w-7xl items-center justify-between p-8">
-      <PaintBucketIcon />
+      <div className="flex items-center gap-4">
+        <PaintBucketIcon />
+        <span className="font-mono text-xl font-black">Dynamyx</span>
+      </div>
       <NavigationMenu>
         <NavList className="hidden md:flex" />
         <Sheet>

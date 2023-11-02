@@ -16,6 +16,7 @@ export const theme = {
   extend: {
     fontFamily: {
       sans: ["Barlow", ..._fontFamily.sans],
+      mono: ["space mono", "JetBrains Mono", ..._fontFamily.mono],
     },
     colors: {
       border: "hsl(var(--border))",
