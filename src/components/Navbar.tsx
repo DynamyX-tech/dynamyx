@@ -10,6 +10,7 @@ import { ModeToggle } from "./ModeToggle";
 import { PaintBucketIcon } from "lucide-react";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
+import Logo from "./Logo";
 
 const components: { title: string; href: string }[] = [
   {
@@ -42,8 +43,7 @@ export function Navbar() {
   return (
     <header className="mx-auto flex max-w-7xl items-center justify-between p-8">
       <div className="flex items-center gap-4">
-        <PaintBucketIcon />
-        <span className="font-mono text-xl font-black">Dynamyx</span>
+        <Logo viewBox="0 0 500 70" height={70} width={140} />
       </div>
       <NavigationMenu>
         <NavList className="hidden md:flex" />

@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
+import GridAnimations from "@/components/GridAnimations";
 import Layout from "@/layouts/Layout.astro";
 import { QuoteIcon } from "@radix-ui/react-icons";
 import { PaintBucket } from "lucide-react";
@@ -28,6 +28,7 @@ import { PaintBucket } from "lucide-react";
         Building things that <span class="text-blue-500">matter.</span> To make
         an impact on the world.
       </h1>
+      <GridAnimations client:only />
       <p class="mx-auto mt-8 max-w-prose text-center text-xl">
         At Dynamyx, we are building solutions to problems that matter. We are a
         team of passionate developers, designers, and creators who are building
