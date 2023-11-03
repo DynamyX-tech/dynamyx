@@ -77,17 +77,16 @@ const NavList = (props: {
         key={component.title + component.href}
         className="self-start"
       >
-        <a href={component.href}>
-          <NavigationMenuLink
-            className={navigationMenuTriggerStyle({
-              className: `bg-transparent ${
-                props.textSize == "large" ? "text-xl" : ""
-              } text-gray-900 dark:text-gray-100`,
-            })}
-          >
-            {component.title}
-          </NavigationMenuLink>
-        </a>
+        <NavigationMenuLink
+          href={component.href}
+          className={navigationMenuTriggerStyle({
+            className: `bg-transparent ${
+              props.textSize == "large" ? "text-xl" : ""
+            } text-gray-900 dark:text-gray-100`,
+          })}
+        >
+          {component.title}
+        </NavigationMenuLink>
       </NavigationMenuItem>
     ))}
   </NavigationMenuList>
