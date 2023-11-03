@@ -76,15 +76,14 @@
   transition: background 300ms ease-in-out;
 }
 .card {
+  @apply shadow dark:p-0.5;
   background: rgba(36, 36, 36, 0.795);
-  padding: 2px;
   border-radius: 12px;
   position: relative;
   overflow: hidden;
 }
 .card:hover > .inner {
-  background: rgb(26, 26, 26, 0.6);
-  backdrop-filter: blur(30px);
+  @apply [backdrop-filter:blur(30px)] [background:white] dark:[background:hsla(var(--foreground),0.6)];
 }
 
 .blob {

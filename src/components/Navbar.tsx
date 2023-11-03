@@ -41,7 +41,7 @@ const components: { title: string; href: string }[] = [
 
 export function Navbar() {
   return (
-    <header className="mx-auto flex max-w-7xl items-center justify-between p-8">
+    <header className="container mx-auto flex items-center justify-between p-8">
       <div className="flex items-center gap-4">
         <Logo viewBox="0 0 500 70" height={70} width={140} />
       </div>

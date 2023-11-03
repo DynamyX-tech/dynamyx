@@ -41,7 +41,7 @@ const CardGrid = () => {
     };
   }, []);
   return (
-    <section id="About" className="mx-auto max-w-7xl px-4">
+    <section id="About" className="container mx-auto px-4">
       <h2 className="mt-20 px-2 text-center text-4xl">What we are doing</h2>
       <div className="mt-12 flex w-full grid-cols-2 flex-col gap-5 lg:grid">
         <div className="card col-span-2">
@@ -85,7 +85,7 @@ const CardGrid = () => {
                 <CardTitle className="text-2xl">Card Title</CardTitle>
               </CardHeader>
               <CardContent>
-                <p>
+                <p className="max-w-prose">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
                   illum nihil et corrupti quasi, incidunt iste asperiores, modi
                   quas eaque iure deserunt voluptatum ratione, ea omnis natus
