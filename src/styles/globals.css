@@ -57,6 +57,7 @@
     @apply bg-background text-foreground;
   }
 }
+
 .autogrid {
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
@@ -70,4 +71,40 @@
   background-size: 70% 70%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+}
+.inner {
+  transition: background 300ms ease-in-out;
+}
+.card {
+  background: rgba(66, 66, 66, 0.2);
+  padding: 2px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover > .inner {
+  background: rgb(26, 26, 26, 0.6);
+  backdrop-filter: blur(80px);
+}
+
+.blob {
+  filter: blur(100px);
+  position: absolute;
+  z-index: -1; /* to keep it at below everything else */
+  top: 0; /* to align it at top */
+  left: 0; /* to align it at left */
+  width: 500px;
+  height: 500px;
+  border-radius: 50%; /* to make it circular */
+  background: rgb(255, 255, 255, 0.5);
+}
+.fakeblob {
+  display: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }

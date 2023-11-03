@@ -13,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import GridAnimations from "@/components/GridAnimations";
+import CardGrid from "@/components/index/CardGrid";
 import Layout from "@/layouts/Layout.astro";
 import { QuoteIcon } from "@radix-ui/react-icons";
 import { PaintBucket } from "lucide-react";
@@ -39,80 +40,7 @@ import { PaintBucket } from "lucide-react";
         <Button variant="secondary">Read the Blog</Button>
       </div>
     </section>
-    <section id="About" class="mx-auto max-w-7xl px-4">
-      <h2 class="mt-20 px-2 text-center text-4xl">What we are doing</h2>
-      <div class="mt-12 flex w-full grid-cols-2 flex-col gap-5 lg:grid">
-        <Card
-          className="col-span-2 flex w-full flex-col overflow-hidden lg:flex-row"
-        >
-          <img
-            src="https://placehold.co/600x400"
-            class="md:my-4 md:rounded-r-xl"
-            alt="placeholder"
-          />
-          <div>
-            <CardHeader>
-              <PaintBucket width={30} height={30} className="mb-5" />
-              <CardTitle className="text-2xl">Card Title</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                illum nihil et corrupti quasi, incidunt iste asperiores, modi
-                quas eaque iure deserunt voluptatum ratione, ea omnis natus qui
-                nesciunt explicabo.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Button>Learn More</Button>
-            </CardFooter>
-          </div>
-        </Card>
-        <Card className="flex  w-full flex-col md:flex-row-reverse ">
-          <img
-            src="https://placehold.co/600x400"
-            class="rounded-tl-xl object-cover md:mt-5 md:w-1/2"
-            alt="placeholder"
-          />
-          <div>
-            <CardHeader>
-              <PaintBucket width={30} height={30} className="mb-5" />
-              <CardTitle className="text-2xl">Card Title</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                illum nihil et corrupti quasi, incidunt iste asperiores, modi
-                quas eaque iure deserunt voluptatum ratione, ea omnis natus qui
-                nesciunt explicabo.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Button>Learn More</Button>
-            </CardFooter>
-          </div>
-        </Card>
-        <Card className="flex w-full ">
-          <div>
-            <CardHeader>
-              <PaintBucket width={30} height={30} className="mb-5" />
-              <CardTitle className="text-2xl">Card Title</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                illum nihil et corrupti quasi, incidunt iste asperiores, modi
-                quas eaque iure deserunt voluptatum ratione, ea omnis natus qui
-                nesciunt explicabo.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Button>Learn More</Button>
-            </CardFooter>
-          </div>
-        </Card>
-      </div>
-    </section>
+    <CardGrid client:load />
     <section id="Contact" class="mx-auto max-w-7xl px-4">
       <h2 class="mt-20 px-2 text-center text-4xl">Projects</h2>
       <div class="relative mt-10 min-h-screen">
