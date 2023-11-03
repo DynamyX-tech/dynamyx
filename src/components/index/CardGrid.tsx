@@ -103,7 +103,7 @@ const CardGrid = () => {
         </div>
         <div className="card">
           <Card className="inner flex h-full w-full">
-            <div>
+            <div className="flex h-full flex-col justify-stretch">
               <CardHeader>
                 <PaintBucket width={30} height={30} className="mb-5" />
                 <CardTitle className="text-2xl">Card Title</CardTitle>
@@ -116,7 +116,7 @@ const CardGrid = () => {
                   qui nesciunt explicabo.
                 </p>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="mt-auto">
                 <Button>Learn More</Button>
               </CardFooter>
             </div>
