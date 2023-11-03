@@ -29,14 +29,6 @@ const components: { title: string; href: string }[] = [
     title: "Utilities",
     href: "/docs/utilities",
   },
-  {
-    title: "Examples",
-    href: "/docs/examples",
-  },
-  {
-    title: "Changelog",
-    href: "/docs/changelog",
-  },
 ];
 
 export function Navbar() {
