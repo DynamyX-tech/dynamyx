@@ -3,6 +3,7 @@ import "@fontsource/barlow";
 import "@fontsource/space-mono";
 import "@/styles/globals.css";
 import { Navbar } from "@/components/Navbar";
+import Footer from "@/components/Footer.astro";
 interface Props {
   title: string;
 }
@@ -27,6 +28,7 @@ const { title } = Astro.props;
     <Navbar client:load />
 
     <slot />
+    <Footer />
   </body>
 </html>
 <script is:inline>

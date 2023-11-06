@@ -2,14 +2,20 @@
 import Layout from "@/layouts/Layout.astro";
 import { Navbar } from "@/components/precio/Navbar.tsx";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardHeader,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
 ---
 
 <Layout title="Precio by DynamyX | Where we build things that matter.">
   <div class="precio">
     <Navbar client:load />
-    <main class="min-w-screen bg-background text-foreground">
+    <main class="dotgrid min-w-screen bg-background text-foreground">
       <section
-        class="container grid min-h-[calc(100vh-11.5rem)] md:grid-cols-2"
+        class="container grid min-h-[calc(100vh-11.5rem)] gap-12 md:grid-cols-2"
       >
         <div class="mt-24">
           <h1 class="text-7xl">Unified platform for real life data.</h1>
@@ -30,10 +36,10 @@ import { Button } from "@/components/ui/button";
         <img
           src="/precio-mock.png"
           alt="Mockup of Precio Dashboard"
-          class="round my-12 w-full rounded-lg object-cover"
+          class="round my-12 w-full rounded-3xl object-cover shadow-2xl"
         />
       </section>
-      <section class="container flex flex-row-reverse gap-8 pb-20">
+      <section class="container flex-row-reverse gap-8 pb-20 md:flex">
         <div class="my-20 flex flex-1 flex-col justify-center">
           <h2 class="text-5xl">
             Innovating Agriculture with Data-Driven Solutions.
@@ -54,23 +60,90 @@ import { Button } from "@/components/ui/button";
           />
         </div>
       </section>
-      <section class="container flex gap-8 py-20">
-        <div class="flex flex-1 flex-col justify-center">
+      <section class="container gap-8 py-20 md:flex">
+        <div class="flex flex-1 flex-col justify-center pb-12">
           <h2 class="text-5xl">Precision Agriculture, Any Scale.</h2>
           <p class="mt-8 text-lg">
-            At Precio, we believe in the power of data to drive progress. Our
-            platform is designed to help you harness the potential of data,
-            automate processes, and make more informed decisions. Whether you're
-            an industry professional, a hobbyist, or simply passionate about
-            agriculture, Precio is your partner for smarter farming.
+            Our platform is tailored to suit every scale of farming, from the
+            small garden in your backyard to the sprawling fields of large
+            commercial farms. Whether you're nurturing a hobby garden, managing
+            a poly-house farm, or overseeing extensive cultivation, Precio is
+            here to provide the tools and solutions you need. With dedicated
+            features for home automation, greenhouse farming, and large-scale
+            field operations, we empower you to monitor, visualize, and automate
+            your agricultural activities at any scale. Precio is your all-in-one
+            platform, adaptable to your needs, making precision agriculture
+            accessible and valuable for everyone.
           </p>
         </div>
         <div class="flex-1">
           <img
-            src="/field.jpeg"
-            alt="Aerial view of a field"
+            src="/toy-field.jpg"
+            alt="A toy field with a tractor"
             class="round max-h-[620px] w-full rounded-lg object-cover"
           />
+        </div>
+      </section>
+      <section class="container flex-col-reverse gap-8 py-20 md:flex">
+        <div class="flex flex-1 flex-col justify-center pb-12">
+          <h2 class="text-5xl">Turning Data into Insights.</h2>
+          <p class="mt-8 text-lg">
+            Data alone is not enough. We empower you to transform raw data into
+            actionable insights, helping you make informed decisions and
+            maximize the potential of your agricultural activities. Our advanced
+            algorithms and AI-based solutions are designed to extract meaningful
+            patterns from the data you collect. Whether you need to optimize
+            irrigation schedules, predict the best time to harvest, or ensure
+            the health of your crops, Precio's data analysis capabilities will
+            guide you toward greater efficiency and profitability.
+          </p>
+        </div>
+        <div class="flex-1">
+          <img
+            src="/insights.jpg"
+            alt="Precio Dashboard Insights"
+            class="round max-h-[620px] w-full rounded-xl border-4 border-primary object-cover p-2"
+          />
+        </div>
+      </section>
+      <section class="container py-12">
+        <h2 class="text-center text-4xl">Precio for Agriculture</h2>
+
+        <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+          <Card
+            className="border-none bg-gradient-to-tr from-emerald-50 to-green-50 shadow-md"
+          >
+            <CardHeader className="text-xl font-bold">Automate</CardHeader>
+            <CardContent>
+              Automate your agricultural activities with our smart solutions.
+            </CardContent>
+          </Card>
+          <Card
+            className="border-none bg-gradient-to-tr from-emerald-50 to-green-50 shadow-md"
+          >
+            <CardHeader className="text-xl font-bold">Visualize</CardHeader>
+            <CardContent>
+              Visualize your data with our intuitive and interactive dashboard.
+            </CardContent>
+          </Card>
+          <Card
+            className="border-none bg-gradient-to-tr from-emerald-50 to-green-50 shadow-md"
+          >
+            <CardHeader className="text-xl font-bold">Optimize</CardHeader>
+            <CardContent>
+              Optimize your agricultural activities with our AI-powered
+              solutions.
+            </CardContent>
+          </Card>
+          <Card
+            className="border-none bg-gradient-to-tr from-emerald-50 to-green-50 shadow-md"
+          >
+            <CardHeader className="text-xl font-bold">Predict</CardHeader>
+            <CardContent>
+              Predict the best time to harvest, irrigate, and more with our
+              advanced algorithms and AI-based solutions.
+            </CardContent>
+          </Card>
         </div>
       </section>
     </main>

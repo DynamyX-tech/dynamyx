@@ -32,7 +32,7 @@ const components: { title: string; href: string }[] = [
 
 export function Navbar() {
   return (
-    <div className="w-full bg-background text-foreground">
+    <div className="dotgrid w-full bg-background text-foreground">
       <header className="container mx-auto flex items-center justify-between p-2">
         <div className="flex items-center gap-4">
           <Logo viewBox="0 0 500 70" />

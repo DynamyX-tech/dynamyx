@@ -14,20 +14,20 @@ import Logo from "./Logo";
 
 const components: { title: string; href: string }[] = [
   {
-    title: "Getting Started",
-    href: "/docs",
+    title: "What we do",
+    href: "/#About",
   },
   {
-    title: "Components",
-    href: "/docs/components",
+    title: "Projects",
+    href: "/#Projects",
   },
   {
-    title: "Layouts",
-    href: "/docs/layouts",
+    title: "Blogs",
+    href: "/#Blogs",
   },
   {
-    title: "Utilities",
-    href: "/docs/utilities",
+    title: "Testimonials",
+    href: "/#Testimonials",
   },
 ];
 

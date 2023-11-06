@@ -75,9 +75,9 @@ const SvgComponentDark = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const SvgLogo = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
-  <>
+  <a href="/">
     <SvgComponent {...props} className={`${className} block dark:hidden`} />
     <SvgComponentDark {...props} className={`${className} hidden dark:block`} />
-  </>
+  </a>
 );
 export default SvgLogo;
