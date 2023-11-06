@@ -6,7 +6,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { ModeToggle } from "../ModeToggle";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { Button } from "../ui/button";
 import Logo from "./Logo";
@@ -14,19 +13,19 @@ import Logo from "./Logo";
 const components: { title: string; href: string }[] = [
   {
     title: "Getting Started",
-    href: "/docs",
+    href: "/precio#",
   },
   {
-    title: "Components",
-    href: "/docs/components",
+    title: "What is Precio?",
+    href: "/precio#about",
   },
   {
-    title: "Layouts",
-    href: "/docs/layouts",
+    title: "Who is Precio for?",
+    href: "/precio#who",
   },
   {
-    title: "Utilities",
-    href: "/docs/utilities",
+    title: "What we offer",
+    href: "/precio#insights",
   },
 ];
 
