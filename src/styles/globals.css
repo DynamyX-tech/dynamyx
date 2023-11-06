@@ -47,6 +47,28 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
   }
+  .precio {
+    --background: 0 0% 96%;
+    --foreground: 0 0% 20%;
+    --card: 0 0% 96%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 96%;
+    --popover-foreground: 0 0% 20%;
+    --primary: 86 78% 27%;
+    --primary-foreground: 0 0% 96%;
+    --secondary: 84 81% 44%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 200 90% 12%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 20%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 200 90% 40%;
+    --radius: 0.5rem;
+  }
 }
 
 @layer base {

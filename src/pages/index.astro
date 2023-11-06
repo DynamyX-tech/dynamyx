@@ -1,5 +1,4 @@
 ---
-import { Navbar } from "@/components/Navbar";
 import TestimonialUser from "@/components/TestimonialUser";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +19,6 @@ import { PaintBucket } from "lucide-react";
 ---
 
 <Layout title="DynamyX | Where we build things that matter.">
-  <Navbar client:load />
   <main class="my-8">
     <GridAnimations client:only />
     <section id="hero" class="container mx-auto min-h-[40vh] px-4">
@@ -204,3 +202,9 @@ import { PaintBucket } from "lucide-react";
     <footer></footer>
   </main>
 </Layout>
+
+<style is:global>
+  .nav {
+    padding: 2rem;
+  }
+</style>
