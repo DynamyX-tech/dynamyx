@@ -35,7 +35,7 @@ export function Navbar() {
   return (
     <header className="nav container mx-auto flex items-center justify-between p-2">
       <div className="flex items-center gap-4">
-        <Logo viewBox="0 0 500 70" height={70} width={140} />
+        <Logo height={70} width={140} />
       </div>
       <NavigationMenu>
         <NavList className="hidden md:flex" />
