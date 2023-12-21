@@ -76,9 +76,6 @@ dependencies:
     version: 5.3.3
 
 devDependencies:
-  bun-types:
-    specifier: ^1.0.7
-    version: 1.0.18
   prettier:
     specifier: ^3.0.3
     version: 3.1.1
@@ -2180,10 +2177,6 @@ packages:
       base64-js: 1.5.1
       ieee754: 1.2.1
     dev: false
-
-  /bun-types@1.0.18:
-    resolution: {integrity: sha512-1XZ7AxOF8oO8FZtw1xj006JAKxEjulK3dUhsktZVN95vXBlsf4NIjQxfistVdpt24v3H2I9BwHp+UU+gXSSpAw==}
-    dev: true
 
   /camelcase-css@2.0.1:
     resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
