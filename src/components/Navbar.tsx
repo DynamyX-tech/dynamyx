@@ -7,9 +7,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "./ModeToggle";
-import { PaintBucketIcon } from "lucide-react";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { Button } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import Logo from "./Logo";
 
 const components: { title: string; href: string }[] = [
@@ -40,14 +39,15 @@ export function Navbar() {
       <NavigationMenu>
         <NavList className="hidden md:flex" />
         <Sheet>
-          <SheetTrigger className="md:hidden">
-            <Button
-              variant="outline"
-              size="icon"
-              aria-label="open navigation sidebar"
-            >
-              <HamburgerMenuIcon />
-            </Button>
+          <SheetTrigger
+            className={buttonVariants({
+              variant: "outline",
+              size: "icon",
+              className: "md:hidden",
+            })}
+            aria-label="open navigation sidebar"
+          >
+            <HamburgerMenuIcon />
           </SheetTrigger>
           <SheetContent>
             <NavList className="mt-14 flex-col" textSize="large" />

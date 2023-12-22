@@ -2,12 +2,11 @@
 import Servicenav from "@/components/kalex/Servicenav.tsx";
 import CaseCard from "@/components/kalex/CaseCard.tsx";
 import Layout from "@/layouts/Layout.astro";
-import "@/styles/kalex.css";
 ---
 
 <Layout title="Kalex by DynamyX | Where we build things that matter.">
-  <div class="Kalex">
-    <main class="mx-52 pb-96 pt-20">
+  <div class="kalex min-w-screen bg-background text-foreground">
+    <main class="container pb-96 pt-20 ">
       <section
         class="flex flex-col items-center justify-center gap-8"
         id="hero"
@@ -103,7 +102,7 @@ import "@/styles/kalex.css";
               class="text-2xl font-bold">Kalex</span
             >
           </h2>
-          <Servicenav />
+          <Servicenav client:load />
         </div>
       </section>
     </main>

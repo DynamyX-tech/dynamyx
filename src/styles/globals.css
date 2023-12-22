@@ -69,6 +69,27 @@
     --ring: 200 90% 40%;
     --radius: 0.5rem;
   }
+  .kalex {
+    --background: 219 25% 11%;
+    --foreground: 221 35% 91%;
+    --card: 219 25% 11%;
+    --card-foreground: 221 35% 91%;
+    --popover: 219 25% 11%;
+    --popover-foreground: 221 35% 91%;
+    --primary: 219 38% 72%;
+    --primary-foreground: 219 25% 11%;
+    --secondary: 235 33% 20%;
+    --secondary-foreground: 221 35% 91%;
+    --muted: 217 22% 14%;
+    --muted-foreground: 221 35% 91%;
+    --accent: 7 83% 59%;
+    --accent-foreground: 219 25% 11%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 222 33% 10%;
+    --border: 220 25% 60%;
+    --input: 219 25% 80%;
+    --ring: 7 83% 60%;
+  }
 }
 
 @layer base {
@@ -77,6 +98,12 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  input {
+    @apply w-full bg-inherit font-bold text-background outline-none;
+  }
+  input::placeholder {
+    @apply font-light text-background;
   }
 }
 .dotgrid {
