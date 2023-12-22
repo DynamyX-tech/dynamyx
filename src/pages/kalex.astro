@@ -6,19 +6,19 @@ import Layout from "@/layouts/Layout.astro";
 
 <Layout title="Kalex by DynamyX | Where we build things that matter.">
   <div class="kalex min-w-screen bg-background text-foreground">
-    <main class="container pb-96 pt-20 ">
+    <main class="container md:px-36 pb-96 pt-20 ">
       <section
         class="flex flex-col items-center justify-center gap-8"
         id="hero"
       >
         <div class="flex flex-row items-center gap-6">
-          <hr class="h-px w-[72px]" />
+          <hr class="h-px md:w-[72px]" />
           <h5
-            class="text-base font-medium uppercase tracking-[0.25rem] text-primary"
+            class="text-base font-medium uppercase md:tracking-[0.25rem] text-primary"
           >
             Lores ispum on wau
           </h5>
-          <hr class="h-px w-[72px]" />
+          <hr class="h-px md:w-[72px]" />
         </div>
         <h2
           class="text-center text-4xl font-light leading-[1.25] tracking-[3px]"
@@ -32,7 +32,7 @@ import Layout from "@/layouts/Layout.astro";
           elementum risus. Mauris at
         </p>
         <div
-          class="flex h-14 w-[440px] flex-row items-center justify-between rounded-full bg-primary pl-6 pr-px"
+          class="flex h-14 md:w-[440px] flex-row items-center justify-between rounded-full bg-primary pl-6 pr-px"
         >
           <input type="email" placeholder="Enter Your Email Address" />
           <button class="h-[52px] w-32 rounded-full bg-background">Join</button>
@@ -45,7 +45,7 @@ import Layout from "@/layouts/Layout.astro";
       </section>
       <section
         id="usecases"
-        class="mt-40 flex flex-row items-center justify-between"
+        class="mt-40 flex md:flex-row flex-col items-center md:justify-between gap-8"
       >
         <div class="flex flex-col gap-6">
           <div class="flex flex-row items-center gap-6 text-accent">
@@ -58,7 +58,7 @@ import Layout from "@/layouts/Layout.astro";
             >
           </h2>
         </div>
-        <div class="grid grid-flow-col grid-rows-2 gap-4">
+        <div class="md:grid md:grid-flow-col md:grid-rows-2 gap-4 flex flex-col">
           <CaseCard
             title="Smart Parking"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam sit amet dictum."
@@ -81,13 +81,13 @@ import Layout from "@/layouts/Layout.astro";
         <img
           src="/public/kalexParking.png"
           alt="kalexCarImage"
-          class="mt-40 w-full"
+          class="mt-40 w-full hidden md:block"
         />
         <h2
-          class="-m-28 text-center text-xl font-light leading-[1.25] tracking-[3px]"
+          class="md:-mt-28 mt-28 text-center text-xl font-light leading-[1.25] tracking-[3px]"
         >
-          Unveiling Exceptional<span class="text-2xl font-bold">Features</span>
-          for an<br /><span class="text-2xl font-bold">Unmatched</span>
+          Unveiling Exceptional<span class="text-xl font-bold">Features</span>
+          for an<br /><span class="text-xl font-bold">Unmatched</span>
           Experience!
         </h2>
       </section>
@@ -102,7 +102,7 @@ import Layout from "@/layouts/Layout.astro";
               class="text-2xl font-bold">Kalex</span
             >
           </h2>
-          <Servicenav client:load />
+          <Servicenav client:load/>
         </div>
       </section>
     </main>
