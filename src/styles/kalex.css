@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   :root {
     --background: 219 25% 89%;
@@ -15,7 +14,7 @@
     --secondary: 235 33% 80%;
     --secondary-foreground: 221 35% 9%;
     --muted: 219 25% 20%;
-    --muted-foreground: 221 35% 70%;
+    --muted-foreground: 221 35% 9%;
     --accent: 7 83% 41%;
     --accent-foreground: 219 25% 89%;
     --destructive: 0 85% 60%;
@@ -37,7 +36,7 @@
     --primary-foreground: 219 25% 11%;
     --secondary: 235 33% 20%;
     --secondary-foreground: 221 35% 91%;
-    --muted: 219 25% 80%;
+    --muted: 217 22% 14%;
     --muted-foreground: 221 35% 91%;
     --accent: 7 83% 59%;
     --accent-foreground: 219 25% 11%;
@@ -45,7 +44,7 @@
     --destructive-foreground: 222 33% 10%;
     --border: 220 25% 60%;
     --input: 219 25% 80%;
-    --ring: 7 83% 60%;
+    --ring: 7 83% 60%; 
   }
 }
 @layer base {
@@ -54,5 +53,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  input {
+    @apply bg-inherit outline-none text-background w-full font-bold;
+  }
+  input::placeholder {
+    @apply text-background font-light;
   }
 }
