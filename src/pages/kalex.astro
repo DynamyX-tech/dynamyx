@@ -3,21 +3,27 @@ import Servicenav from "@/components/kalex/Servicenav.tsx";
 import CaseCard from "@/components/kalex/CaseCard.tsx";
 import Layout from "@/layouts/Layout.astro";
 import Navbar from "@/components/kalex/Navbar.tsx";
+import QuestionCard from "@/components/kalex/QuestionCard";
 ---
 
 <Layout title="Kalex by DynamyX | Where we build things that matter.">
   <div class="kalex min-w-screen bg-background text-foreground">
-    <main class="container md:px-36 pb-28 pt-10 isolate">
-      <img src="/patternbg.svg" alt="background" class="absolute pointer-events-none -z-10 w-screen h-screen object-cover top-[5.5rem] opacity-30 left-0" aria-hidden="true" />
+    <main class="container isolate pb-28 pt-10 md:px-36">
+      <img
+        src="/patternbg.svg"
+        alt="background"
+        class="pointer-events-none absolute left-0 top-[5.5rem] -z-10 h-screen w-screen object-cover opacity-30"
+        aria-hidden="true"
+      />
       <Navbar />
       <section
-        class="flex flex-col items-center justify-center gap-8 mt-24 "
+        class="mt-24 flex flex-col items-center justify-center gap-8"
         id="hero"
       >
         <div class="flex flex-row items-center gap-6">
           <hr class="h-px md:w-[72px]" />
           <h5
-            class="text-base font-medium uppercase md:tracking-[0.25rem] text-primary"
+            class="text-base font-medium uppercase text-primary md:tracking-[0.25rem]"
           >
             Lores ispum on wau
           </h5>
@@ -35,7 +41,7 @@ import Navbar from "@/components/kalex/Navbar.tsx";
           elementum risus. Mauris at
         </p>
         <div
-          class="flex h-14 md:w-[440px] flex-row items-center justify-between rounded-full bg-primary pl-6 pr-px"
+          class="flex h-14 flex-row items-center justify-between rounded-full bg-primary pl-6 pr-px md:w-[440px]"
         >
           <input type="email" placeholder="Enter Your Email Address" />
           <button class="h-[52px] w-32 rounded-full bg-background">Join</button>
@@ -48,7 +54,7 @@ import Navbar from "@/components/kalex/Navbar.tsx";
       </section>
       <section
         id="usecases"
-        class="mt-40 flex md:flex-row flex-col items-center md:justify-between gap-8"
+        class="mt-40 flex flex-col items-center gap-8 md:flex-row md:justify-between"
       >
         <div class="flex flex-col gap-6">
           <div class="flex flex-row items-center gap-6 text-accent">
@@ -61,7 +67,9 @@ import Navbar from "@/components/kalex/Navbar.tsx";
             >
           </h2>
         </div>
-        <div class="md:grid md:grid-flow-col md:grid-rows-2 gap-4 flex flex-col">
+        <div
+          class="flex flex-col gap-4 md:grid md:grid-flow-col md:grid-rows-2"
+        >
           <CaseCard
             title="Smart Parking"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam sit amet dictum."
@@ -80,21 +88,21 @@ import Navbar from "@/components/kalex/Navbar.tsx";
           />
         </div>
       </section>
-      <section id="feature">
+      <section id="banner">
         <img
           src="/public/kalexParking.png"
           alt="kalexCarImage"
-          class="mt-40 w-full hidden md:block"
+          class="mt-40 hidden w-full md:block"
         />
         <h2
-          class="md:-mt-28 mt-28 text-center text-xl font-light leading-[1.25] tracking-[3px]"
+          class="mt-28 text-center text-xl font-light leading-[1.25] tracking-[3px] md:-mt-28"
         >
-          Unveiling Exceptional<span class="text-xl font-bold">Features</span>
-          for an<br /><span class="text-xl font-bold">Unmatched</span>
-          Experience!
+          Unveiling Exceptional<span class="text-xl font-bold">Services</span>
+           for an<br /><span class="text-xl font-bold">Unmatched</span>
+           Experience!
         </h2>
       </section>
-      <section id="services" class="mt-96 flex flex-row items-center">
+      <section id="services" class="mt-36 flex flex-row items-center">
         <div class="flex flex-col gap-6">
           <div class="flex flex-row items-center gap-6 text-accent">
             <h5 class="font-medium uppercase tracking-[0.25rem]">Services</h5>
@@ -105,9 +113,58 @@ import Navbar from "@/components/kalex/Navbar.tsx";
               class="text-2xl font-bold">Kalex</span
             >
           </h2>
-          <Servicenav client:load/>
+          <Servicenav client:load />
+        </div>
+      </section>
+      <section id="feature" class="mt-40">
+        <div class="flex w-full flex-wrap items-center justify-between">
+          <dotlottie-player
+            class="hidden md:block"
+            src="https://lottie.host/32faba50-d9ce-458b-a443-c1874f53e8f1/SOCizeH2Uu.json"
+            background="transparent"
+            speed="0.5"
+            style="width: 500px; height: 500px;"
+            loop
+            autoplay></dotlottie-player>
+          <div>
+            <div class="flex flex-row items-center gap-6 text-accent">
+              <h5 class="font-medium uppercase tracking-[0.25rem]">FAQ</h5>
+              <hr class="h-px w-[72px] border-accent" />
+            </div>
+            <h2 class="mt-6 text-xl font-light leading-[1.25] tracking-[3px]">
+              Frequently Asked<br /><span class="text-2xl font-bold"
+                >Questions</span
+              >
+            </h2>
+            <div class="mt-6 flex flex-col gap-3">
+              <QuestionCard
+                question="How does Kalex work?"
+                answer="Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit autfugit, sed quia consequuntur magni dolores eos, qui ratione voluptatemsequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quiadolor sit amet consectetur adipisci[ng] velit, sed quia non numquam."
+                default
+                client:load
+              />
+              <QuestionCard
+                question="What cities or locations is Kalex available in?"
+                answer="Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit autfugit, sed quia consequuntur magni dolores eos, qui ratione voluptatemsequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quiadolor sit amet consectetur adipisci[ng] velit, sed quia non numquam."
+                client:load
+              />
+              <QuestionCard
+                question="How can users make reservations?"
+                answer="Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit autfugit, sed quia consequuntur magni dolores eos, qui ratione voluptatemsequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quiadolor sit amet consectetur adipisci[ng] velit, sed quia non numquam."
+                client:load
+              />
+              <QuestionCard
+                question="How can businesses integrate Kalex into their parking facilities?"
+                answer="Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit autfugit, sed quia consequuntur magni dolores eos, qui ratione voluptatemsequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quiadolor sit amet consectetur adipisci[ng] velit, sed quia non numquam."
+                client:load
+              />
+            </div>
+          </div>
         </div>
       </section>
     </main>
   </div>
 </Layout>
+<script
+  src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+  type="module"></script>
