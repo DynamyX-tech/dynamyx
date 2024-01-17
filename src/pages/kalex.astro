@@ -15,7 +15,7 @@ import QuestionCard from "@/components/kalex/QuestionCard";
         class="pointer-events-none absolute left-0 top-[5.5rem] -z-10 h-screen w-screen object-cover opacity-30"
         aria-hidden="true"
       />
-      <Navbar />
+      <Navbar client:load/>
       <section
         class="mt-24 flex flex-col items-center justify-center gap-8"
         id="hero"
@@ -44,7 +44,7 @@ import QuestionCard from "@/components/kalex/QuestionCard";
           class="flex h-14 flex-row items-center justify-between rounded-full bg-primary pl-6 pr-px md:w-[440px]"
         >
           <input type="email" placeholder="Enter Your Email Address" />
-          <button class="h-[52px] w-32 rounded-full bg-background">Join</button>
+          <button class="h-[52px] w-44 rounded-full bg-background">Try Us</button>
         </div>
         <h5
           class="text-base font-medium uppercase tracking-[0.25rem] text-primary"
