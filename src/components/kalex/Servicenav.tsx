@@ -12,13 +12,13 @@ const data: Data = {
   mobileapp: {
     title: "Mobile App",
     description:
-      "Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit autfugit, sed quia consequuntur magni dolores eos, qui ratione voluptatemsequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quiadolor sit amet consectetur adipisci[ng] velit, sed quia non numquam Nemo enim iput odit aut fugit, sed quia consequuntur magni doloreseos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est,qui dolorem ipsum, quia Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt,",
+      "Elevate your parking experience with the Kalex Mobile App. Seamlessly access real-time parking updates, reserve your preferred spots, and effortlessly manage transactions—all at your fingertips. Our intuitive and feature-rich app ensures convenience and control wherever your urban journey takes you.",
     image: "/public/kalexMobile.png",
   },
   dashboard: {
     title: "Dashboard",
     description:
-      "sectetur adipisci[ng] velit, sed quia non numquam Nemo enim iput odit aut fugit, sed quia consequuntur magni doloreseos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est,qui dolorem ipsum, quia Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt",
+      "Take command of parking efficiency with our Interactive Dashboard. Effortlessly monitor and analyze parking data, gaining valuable insights for optimal space management. Kalex empowers you with a comprehensive tool that transforms data into actionable decisions, ensuring a streamlined parking experience.",
     image: "/public/kalexDashboard.png",
   },
 };

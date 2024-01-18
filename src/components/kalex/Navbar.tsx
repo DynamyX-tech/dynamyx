@@ -8,7 +8,7 @@ export default function Navbar(){
         <div className="w-full flex flex-row justify-between items-center">
             <img src="/public/Kalexlogo.png" className="h-12"></img>
             <div className="md:flex flex-row gap-8 hidden">
-                <a href="/kalex#usecases">Use cases</a>
+                <a href="/kalex#features">Features</a>
                 <a href="/kalex#services">Services</a>
                 <a href="/kalex#faq">FAQ</a>
             </div>
