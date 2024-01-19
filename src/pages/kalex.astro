@@ -5,12 +5,7 @@ import Layout from "@/layouts/Layout.astro";
 import Navbar from "@/components/kalex/Navbar.tsx";
 import QuestionCard from "@/components/kalex/QuestionCard";
 ---
-
-<script >
-  //@ts-ignore
-  import '@dotlottie/player-component';
-</script>
-
+<script is:inline src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
 <Layout title="Kalex by DynamyX | Where we build things that matter.">
   <div class="kalex min-w-screen bg-background text-foreground">
     <main class="container isolate pb-28 pt-10 md:px-36">
@@ -107,13 +102,13 @@ import QuestionCard from "@/components/kalex/QuestionCard";
           >
         </h2>
         <img
-          src="/public/roadmap.png"
+          src="roadmap.png"
           alt="roadmap"
           class="mt-2 w-full absolute left-0">
       </section>
       <section id="banner" class="md:mt-[70rem]">
         <img
-          src="/public/kalexParking.png"
+          src="kalexParking.png"
           alt="kalexCarImage"
           class="mt-40 hidden w-full md:block"
         />
