@@ -12,7 +12,7 @@ export default function Navbar(){
                 <a href="/kalex#services">Services</a>
                 <a href="/kalex#faq">FAQ</a>
             </div>
-            <button className=" w-36 h-12 border border-foreground rounded-full md:flex flex-row justify-center items-center hidden ">Contact us</button>
+            <button className=" w-36 h-12 border border-foreground rounded-full md:flex flex-row justify-center items-center hidden ">Request Demo</button>
             <button className="md:hidden border p-2 rounded" onClick={()=>{
                 setOpen(!open);
             }}>{open ? <Cross1Icon/> : <HamburgerMenuIcon/>}</button>
@@ -21,7 +21,7 @@ export default function Navbar(){
             <a href="/kalex#usecases">Use cases</a>
             <a href="/kalex#services">Services</a>
             <a href="/kalex#faq">FAQ</a>
-            <button className=" w-24 h-9 border border-foreground rounded-lg flex flex-row justify-center items-center">Contact us</button>
+            <button className=" w-24 px-4 border border-foreground rounded-lg flex flex-row justify-center items-center">Request Demo</button>
         </div>}
         </>
     )

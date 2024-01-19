@@ -26,7 +26,7 @@ const data: Data = {
 const Servicenav = () => {
   const [selected, setSelected] = useState("mobileapp");
   return (
-    <div className="flex md:flex-row flex-col items-center md:gap-64">
+    <div className="flex md:flex-row w-[100%] flex-col items-center justify-between">
       <div className="flex flex-col gap-8 text-primary ">
         <div className=" flex h-14 md:w-[440px] w-72 items-center justify-center rounded-full border border-primary font-medium">
           <button
@@ -61,7 +61,7 @@ const Servicenav = () => {
           {data[selected].description}
         </p>
       </div>
-      <img src={data[selected].image} className="mt-10 md:-mt-36 h-[400px] max-w-96"></img>
+      <img src={data[selected].image} className="mt-10 md:-mt-36 max-w-[15rem] md:h-[400px] md:max-w-[40rem]"></img>
     </div>
   );
 };
