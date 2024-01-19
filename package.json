@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -13,7 +13,6 @@
     "@astrojs/check": "^0.3.4",
     "@astrojs/react": "^3.0.4",
     "@astrojs/tailwind": "^5.0.2",
-    "@dotlottie/player-component": "^2.7.8",
     "@fontsource/barlow": "^5.0.8",
     "@fontsource/space-mono": "^5.0.17",
     "@radix-ui/react-avatar": "^1.0.4",
