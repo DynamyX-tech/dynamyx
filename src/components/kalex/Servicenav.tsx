@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Data = {
   [key: string]: {
@@ -24,16 +24,39 @@ const data: Data = {
 };
 
 const Servicenav = () => {
-  const [selected, setSelected] = useState("mobileapp");
+  const [selected, setSelected] = useState<"mobileapp" | "dashboard">(
+    "mobileapp",
+  );
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (imgRef.current == null) return;
+    //add animation
+    if (selected == "mobileapp")
+      imgRef.current.classList.add("animate-fade-left");
+    else imgRef.current.classList.add("animate-fade-right");
+    //remove animation after 500ms
+    const timeout = setTimeout(() => {
+      imgRef.current?.classList.remove("animate-fade-left");
+      imgRef.current?.classList.remove("animate-fade-right");
+    }, 500);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [selected]);
+
   return (
-    <div className="grid w-[100%] grid-cols-1 items-center justify-between gap-8 xl:grid-cols-2">
+    <div className=" grid w-[100%] grid-cols-1 items-center justify-between gap-8 xl:grid-cols-2">
       <div className="flex flex-col gap-8 text-primary ">
-        <div className=" flex h-14 w-72 items-center justify-center rounded-full border border-primary font-medium md:w-[440px]">
+        <div className="relative isolate flex h-14 w-72 items-center justify-center rounded-full border border-primary font-medium md:w-[440px]">
+          <div
+            className={`absolute top-0 -z-10 h-full w-1/2 rounded-full bg-primary text-background ${
+              selected == "mobileapp" ? "left-0" : "left-1/2"
+            } transition-all duration-500 ease-in-out`}
+          ></div>
           <button
-            className={`flex h-full w-36 items-center justify-center md:w-[220px] ${
-              selected == "mobileapp"
-                ? "rounded-full bg-primary text-background"
-                : ""
+            className={`z-10 flex h-full w-36 items-center justify-center md:w-[220px] ${
+              selected == "mobileapp" ? "text-black" : ""
             }`}
             onClick={() => {
               setSelected("mobileapp");
@@ -42,10 +65,8 @@ const Servicenav = () => {
             Mobile App
           </button>
           <button
-            className={`flex h-full w-36 items-center justify-center md:w-[220px] ${
-              selected == "dashboard"
-                ? "rounded-full bg-primary text-background"
-                : ""
+            className={`z-10 flex h-full w-36 items-center justify-center md:w-[220px] ${
+              selected == "dashboard" ? "text-black" : ""
             }`}
             onClick={() => {
               setSelected("dashboard");
@@ -61,7 +82,8 @@ const Servicenav = () => {
       </div>
       <img
         src={data[selected].image}
-        className="mt-10 max-h-[50vh] w-full max-w-[15rem] object-contain md:max-w-full"
+        className="mt-10 h-[50vh] w-full object-contain md:max-w-full"
+        ref={imgRef}
       ></img>
     </div>
   );
