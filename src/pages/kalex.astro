@@ -8,7 +8,7 @@ import QuestionCard from "@/components/kalex/QuestionCard";
 <script is:inline src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
 <Layout title="Kalex by DynamyX | Where we build things that matter.">
   <div class="kalex min-w-screen bg-background text-foreground">
-    <main class="container isolate pb-28 pt-10 md:px-36">
+    <main class="container isolate pb-28 pt-10 md:px-20 xl:px-36">
       <img
         src="/patternbg.svg"
         alt="background"
@@ -56,7 +56,7 @@ import QuestionCard from "@/components/kalex/QuestionCard";
       </section>
       <section
         id="features"
-        class="mt-40 flex flex-col items-center gap-8 md:flex-row md:justify-between"
+        class="mt-40 flex flex-col gap-8 md:flex-row flex-wrap md:justify-between"
       >
         <div class="flex flex-col gap-6">
           <div class="flex flex-row items-center gap-6 text-accent">
@@ -101,16 +101,18 @@ import QuestionCard from "@/components/kalex/QuestionCard";
             >Parking Solutions</span
           >
         </h2>
+      </section>
+      </main>
         <img
           src="/roadmap.png"
           alt="roadmap"
-          class="mt-2 w-full absolute left-0 hidden md:block">
+          class="mt-2 hidden md:block w-screen relative">
           <img
           src="/roadmapmobile.png"
           alt="roadmap"
-          class="mt-14 w-full left-0 absolute md:hidden block">
-      </section>
-      <section id="banner" class="md:mt-[70rem] mt-[55rem]">
+          class="w-full left-0 md:hidden block">
+          <main class="container isolate pb-28 pt-10 md:px-36">
+      <section id="banner" class="">
         <img
           src="/kalexParking.png"
           alt="kalexCarImage"
