@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <>
       <div className="flex w-full flex-row items-center justify-between">
-        <img src="Kalexlogo.png" className="h-12"></img>
+        <img src="/Kalexlogo.png" className="h-12"></img>
         <div className="hidden flex-row gap-8 md:flex">
           <a href="/kalex#features">Features</a>
           <a href="/kalex#services">Services</a>
