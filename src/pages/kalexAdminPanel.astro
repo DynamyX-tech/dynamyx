@@ -1,0 +1,30 @@
+---
+import "@/styles/adminPanel.css";
+import Sidebar from "@/components/AdminPanel/Sidebar";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Building amazing solutions that matter."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Kalex Admin Panel</title>
+  </head>
+  <body>
+    <main class="flex justify-between pl-10 pt-10">
+      <Sidebar />
+      <section
+        class="roun h-[95vh] w-[85vw] rounded-l-[50px] bg-secondary px-10 py-10"
+      >
+        <h1>Dashboard</h1>
+        <p>Welcome to the dashboard.</p>
+      </section>
+    </main>
+  </body>
+</html>
