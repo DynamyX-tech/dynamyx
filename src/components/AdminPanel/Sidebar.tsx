@@ -8,40 +8,45 @@ import {
 } from "@radix-ui/react-icons";
 import { useState } from "react";
 
+type navItem = {
+  text: string;
+  icon: any;
+  selected?: boolean;
+};
+
+const Item = (props: navItem) => {
+  const selected = props.selected;
+  return (
+    <div
+      className={`flex flex-row items-center gap-2 px-10  ${
+        selected ? " bg-primary py-4 text-background" : "hover:text-accent"
+      }`}
+    >
+      {props.icon}
+      {props.text}
+    </div>
+  );
+};
+
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className="flex max-h-[90vh] w-[10vw] flex-col items-start justify-between px-2 py-12">
-        <div className="flex flex-col items-center gap-1">
-          <img src="/Kalexlogo.png" className="h-10"></img>
-          <h6>version 0.0.5</h6>
+      <div className="flex h-screen flex-col items-start justify-between bg-muted py-12">
+        <div className="flex flex-col gap-12">
+          <div className="flex flex-col items-center gap-1 px-12 py-4">
+            <img src="/Kalexlogo.png" className="h-10"></img>
+            <h6>version 0.0.5</h6>
+          </div>
+          <div className="flex flex-col gap-8">
+            <Item text="Dashboard" icon={<DashboardIcon />} selected />
+            <Item text="Analysis" icon={<BarChartIcon />} />
+            <Item text="Settings" icon={<GearIcon />} />
+            <Item text="Logs" icon={<FileTextIcon />} />
+            <Item text="Status" icon={<ActivityLogIcon />} />
+          </div>
         </div>
-        <ul className=" flex flex-col gap-2 text-lg">
-          <li className="text-primary hover:text-primary">
-            <DashboardIcon />
-            Dashboard
-          </li>
-          <li className=" hover:text-primary">
-            <BarChartIcon />
-            Analysis
-          </li>
-          <li className=" hover:text-primary">
-            <GearIcon />
-            Settings
-          </li>
-        </ul>
-        <ul className=" flex w-full  flex-col gap-2 border-y border-foreground py-4 text-lg">
-          <li className=" hover:text-primary">
-            <FileTextIcon />
-            logs
-          </li>
-          <li className=" hover:text-primary">
-            <ActivityLogIcon />
-            status
-          </li>
-        </ul>
-        <button className="flex w-full items-center justify-center gap-2 rounded-[10px] border border-primary px-2 py-3 text-primary hover:bg-primary hover:text-foreground">
+        <button className="flex w-[70%] items-center justify-center gap-2 self-center rounded-[10px] border border-accent px-2 py-3 text-accent hover:bg-accent hover:text-foreground">
           <ExitIcon />
           log out
         </button>

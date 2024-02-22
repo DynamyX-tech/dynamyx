@@ -1,5 +1,5 @@
 ---
-import "@/styles/adminPanel.css";
+import "@/styles/kalex.css";
 import Sidebar from "@/components/AdminPanel/Sidebar";
 ---
 
@@ -17,14 +17,35 @@ import Sidebar from "@/components/AdminPanel/Sidebar";
     <title>Kalex Admin Panel</title>
   </head>
   <body>
-    <main class="flex justify-between pl-10 pt-10">
+    <main class="flex">
       <Sidebar />
-      <section
-        class="roun h-[95vh] w-[85vw] rounded-l-[50px] bg-secondary px-10 py-10"
-      >
+      <section class="">
         <h1>Dashboard</h1>
         <p>Welcome to the dashboard.</p>
       </section>
     </main>
   </body>
 </html>
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
