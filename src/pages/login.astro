@@ -18,9 +18,9 @@ import { Button } from "@/components/ui/button";
     <title>Kalex Login Page</title>
   </head>
   <body class="flex h-screen w-screen items-center justify-between px-2">
-    <div class="h-[98vh] w-[48vw] rounded-lg bg-muted"></div>
+    <div class="hidden h-[98vh] w-[48vw] rounded-lg bg-muted lg:block"></div>
     <div
-      class="flex h-[98vh] w-[48vw] flex-col items-center justify-between py-8"
+      class="flex h-[98vh] w-full flex-col items-center justify-between py-8 lg:w-[48vw]"
     >
       <img src="/Kalexlogo.png" class="h-10" />
       <div class="flex flex-col gap-12">
@@ -32,7 +32,7 @@ import { Button } from "@/components/ui/button";
         </div>
         <form
           name="ReachOut"
-          class="flex w-[20vw] flex-col gap-4"
+          class="flex flex-col gap-4 lg:w-[20vw]"
           data-netlify="true"
           method="POST"
         >
