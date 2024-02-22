@@ -25,8 +25,64 @@ import { Button } from "@/components/ui/button";
     <meta name="generator" content={Astro.generator} />
     <title>Kalex register Page</title>
   </head>
-  <body>
-    <main class="flex h-screen items-center justify-center">
+  <body class="flex h-screen w-screen items-center justify-between px-2">
+    <div class="h-[98vh] w-[48vw] rounded-lg bg-muted"></div>
+    <div
+      class="flex h-[98vh] w-[48vw] flex-col items-center justify-between py-8"
+    >
+      <img src="/Kalexlogo.png" class="h-10" />
+      <div class="flex flex-col gap-12">
+        <div class="flex flex-col items-center">
+          <div class="text-3xl">Create a New Account</div>
+          <h4 class="text-primary">
+            Enter your credentials below to create your account
+          </h4>
+        </div>
+        <form
+          name="ReachOut"
+          class="flex w-[20vw] flex-col gap-4"
+          data-netlify="true"
+          method="POST"
+        >
+          <Input
+            type="email"
+            placeholder="email address"
+            name="email"
+            required
+            aria-label="email"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
+            type="text"
+            placeholder="username"
+            name="name"
+            required
+            aria-label="name"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
+            type="password"
+            placeholder="password"
+            name="password"
+            aria-label="password"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Button type="submit" className="bg-foreground">
+            Create Account
+          </Button>
+        </form>
+        <!-- <a class="self-end text-xs text-primary">Forget password?</a> -->
+      </div>
+      <h6 class="text-xs text-primary">
+        Already have an account in kalex ?<span
+          class="font-bold text-foreground"
+        >
+          log in</span
+        >
+      </h6>
+    </div>
+  </body>
+  <!-- <main class="flex items-center justify-center">
       <div class="flex w-max flex-col items-center gap-4">
         <div class="flex flex-col items-center">
           <div class="text-2xl">Create a New Account</div>
@@ -60,33 +116,9 @@ import { Button } from "@/components/ui/button";
           <Button type="submit">Submit</Button>
         </form>
       </div>
-    </main>
+    </main> -->
 
-    <script is:inline>
-      const getThemePreference = () => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme")
-        ) {
-          return localStorage.getItem("theme");
-        }
-        return window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light";
-      };
-      const isDark = getThemePreference() === "dark";
-      document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-
-      if (typeof localStorage !== "undefined") {
-        const observer = new MutationObserver(() => {
-          const isDark = document.documentElement.classList.contains("dark");
-          localStorage.setItem("theme", isDark ? "dark" : "light");
-        });
-        observer.observe(document.documentElement, {
-          attributes: true,
-          attributeFilter: ["class"],
-        });
-      }
-    </script>
-  </body>
+  <script is:inline>
+    document.documentElement.classList.add("dark");
+  </script>
 </html>
