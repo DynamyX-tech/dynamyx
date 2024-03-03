@@ -5,16 +5,21 @@ import Layout from "@/layouts/Layout.astro";
 import Navbar from "@/components/kalex/Navbar.tsx";
 import QuestionCard from "@/components/kalex/QuestionCard";
 ---
-<script is:inline src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+
+<script
+  is:inline
+  src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"
+></script>
 <Layout title="Kalex by DynamyX | Where we build things that matter.">
   <div class="kalex min-w-screen bg-background text-foreground">
     <main class="container isolate pb-28 pt-10 md:px-20 xl:px-36">
       <img
         src="/patternbg.svg"
         alt="background"
-        class="pointer-events-none absolute left-0 top-[5.5rem] -z-10 h-screen w-screen object-cover opacity-30"
+        class="pointer-events-none absolute left-0 top-0 -z-10 h-screen w-screen object-cover opacity-30"
         aria-hidden="true"
       />
+      <!-- top-[5.5rem] -->
       <Navbar client:load />
       <section
         class="mt-24 flex flex-col items-center justify-center gap-8"
@@ -56,7 +61,7 @@ import QuestionCard from "@/components/kalex/QuestionCard";
       </section>
       <section
         id="features"
-        class="mt-40 flex flex-col gap-8 md:flex-row flex-wrap md:justify-between"
+        class="mt-40 flex flex-col flex-wrap gap-8 md:flex-row md:justify-between"
       >
         <div class="flex flex-col gap-6">
           <div class="flex flex-row items-center gap-6 text-accent">
@@ -91,27 +96,33 @@ import QuestionCard from "@/components/kalex/QuestionCard";
         </div>
       </section>
       <section id="roadmap" class="mt-36">
-        <div class="flex flex-row items-center gap-6 text-accent justify-center mb-4">
+        <div
+          class="mb-4 flex flex-row items-center justify-center gap-6 text-accent"
+        >
           <hr class="h-px w-[72px] border-accent" />
           <h5 class="font-medium uppercase tracking-[0.25rem]">Road Map</h5>
           <hr class="h-px w-[72px] border-accent" />
         </div>
-        <h2 class="text-xl font-light leading-[1.25] tracking-[3px] text-center">
+        <h2
+          class="text-center text-xl font-light leading-[1.25] tracking-[3px]"
+        >
           The Kalex Roadmap to Seamless<br /><span class="text-2xl font-bold"
             >Parking Solutions</span
           >
         </h2>
       </section>
-      </main>
-        <img
-          src="/roadmap.png"
-          alt="roadmap"
-          class="mt-2 hidden md:block w-screen relative">
-          <img
-          src="/roadmapmobile.png"
-          alt="roadmap"
-          class="w-full left-0 md:hidden block">
-          <main class="container isolate pb-28 pt-10 md:px-36">
+    </main>
+    <img
+      src="/roadmap.png"
+      alt="roadmap"
+      class="relative mt-2 hidden w-screen md:block"
+    />
+    <img
+      src="/roadmapmobile.png"
+      alt="roadmap"
+      class="left-0 block w-full md:hidden"
+    />
+    <main class="container isolate pb-28 pt-10 md:px-36">
       <section id="banner" class="">
         <img
           src="/kalexParking.png"
@@ -127,7 +138,7 @@ import QuestionCard from "@/components/kalex/QuestionCard";
         </h2>
       </section>
       <section id="services" class="mt-36 flex flex-row items-center">
-        <div class="flex flex-col gap-6 w-full">
+        <div class="flex w-full flex-col gap-6">
           <div class="flex flex-row items-center gap-6 text-accent">
             <h5 class="font-medium uppercase tracking-[0.25rem]">Services</h5>
             <hr class="h-px w-[72px] border-accent" />
@@ -179,7 +190,7 @@ import QuestionCard from "@/components/kalex/QuestionCard";
               />
               <QuestionCard
                 question="How can businesses integrate Kalex into their parking facilities?"
-                answer="Businesses register on our website, download our software, and connect it to their parking infrastructure, including ramps and sensors, to enable real-time parking management through the Kalex platform."                
+                answer="Businesses register on our website, download our software, and connect it to their parking infrastructure, including ramps and sensors, to enable real-time parking management through the Kalex platform."
                 client:load
               />
             </div>
@@ -187,5 +198,45 @@ import QuestionCard from "@/components/kalex/QuestionCard";
         </div>
       </section>
     </main>
+    <footer class="bg-secondary">
+      <div
+        class="container mx-auto flex flex-col items-center justify-between px-6 py-8 lg:flex-row"
+      >
+        <div class="flex flex-col items-start gap-2">
+          <img src="/Kalexlogo.png" alt="Kalex" class="h-12" />
+          <p class="text-sm text-foreground dark:text-gray-400">
+            Kalex is a product of DynamyX
+          </p>
+        </div>
+        <div
+          class="mt-6 flex flex-wrap items-center justify-center gap-4 lg:mt-0 lg:gap-6"
+        >
+          <a
+            href="#"
+            class="text-sm text-foreground transition-colors duration-300 hover:text-blue-500"
+          >
+            Home
+          </a>
+          {
+            [
+              { title: "Features", href: "#features" },
+              { title: "Services", href: "#services" },
+              { title: "FAQ", href: "#faq" },
+            ].map((data) => (
+              <a
+                href={data.href}
+                class="text-sm  text-foreground transition-colors duration-300 hover:text-blue-500 "
+              >
+                {data.title}
+              </a>
+            ))
+          }
+        </div>
+
+        <p class="mt-6 text-sm text-gray-500 lg:mt-0 dark:text-gray-400">
+          © Copyright {new Date().getFullYear()} DynamyX.
+        </p>
+      </div>
+    </footer>
   </div>
 </Layout>
