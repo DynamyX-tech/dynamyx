@@ -31,7 +31,8 @@ import { Button } from "@/components/ui/button";
           </h4>
         </div>
         <form
-          name="ReachOut"
+          id="register-form"
+          name="Register"
           class="flex flex-col gap-4 lg:w-[20vw]"
           data-netlify="true"
           method="POST"
@@ -60,15 +61,16 @@ import { Button } from "@/components/ui/button";
             className=" text-card-foreground placeholder:text-input"
           />
           <Button type="submit" className="bg-foreground">
-            Create Account
+            <a href="/kalexAdminPanel">Create Account</a>
           </Button>
         </form>
       </div>
       <h6 class="text-xs text-primary">
-        Already have an account in kalex ?<span
+        Already have an account in kalex ?<a
           class="font-bold text-foreground"
+          href="/login"
         >
-          log in</span
+          log in</a
         >
       </h6>
     </div>

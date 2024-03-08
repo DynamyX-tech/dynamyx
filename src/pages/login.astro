@@ -31,7 +31,8 @@ import { Button } from "@/components/ui/button";
           </h4>
         </div>
         <form
-          name="ReachOut"
+          id="login-form"
+          name="Login"
           class="flex flex-col gap-4 lg:w-[20vw]"
           data-netlify="true"
           method="POST"
@@ -44,14 +45,6 @@ import { Button } from "@/components/ui/button";
             aria-label="email"
             className=" text-card-foreground placeholder:text-input"
           />
-          <!-- <Input
-            type="text"
-            placeholder="username"
-            name="name"
-            required
-            aria-label="name"
-            className=" text-card-foreground placeholder:text-input"
-          /> -->
           <Input
             type="password"
             placeholder="password"
@@ -59,13 +52,15 @@ import { Button } from "@/components/ui/button";
             aria-label="password"
             className=" text-card-foreground placeholder:text-input"
           />
-          <Button type="submit" className="bg-foreground">log in</Button>
+          <Button type="submit" className="bg-foreground">
+            <a href="/kalexAdminPanel">log in</a>
+          </Button>
           <a class="self-end text-xs text-primary">Forget password?</a>
         </form>
       </div>
       <h6 class="text-xs text-primary">
-        New to kalex?<span class="font-bold text-foreground">
-          Create an account</span
+        New to kalex?<a href="/register" class="font-bold text-foreground">
+          Create an account</a
         >
       </h6>
     </div>
