@@ -33,7 +33,7 @@ import { Button } from "@/components/ui/button";
         <form
           id="register-form"
           name="Register"
-          class="flex flex-col gap-4 lg:w-[20vw]"
+          class="flex grid-cols-2 flex-col gap-4 lg:grid lg:w-[40vw]"
           data-netlify="true"
           method="POST"
         >
@@ -54,14 +54,38 @@ import { Button } from "@/components/ui/button";
             className=" text-card-foreground placeholder:text-input"
           />
           <Input
+            type="text"
+            placeholder="first_name"
+            name="first_name"
+            required
+            aria-label="first_name"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
+            type="text"
+            placeholder="last_name"
+            name="last_name"
+            required
+            aria-label="last_name"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
             type="password"
             placeholder="password"
             name="password"
             aria-label="password"
             className=" text-card-foreground placeholder:text-input"
           />
-          <Button type="submit" className="bg-foreground">
-            <a href="/kalexAdminPanel">Create Account</a>
+          <Input
+            type="password"
+            placeholder="confirm password"
+            name="confirm_password"
+            aria-label="confirm password"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Button type="submit" className="col-span-2 bg-foreground">
+            Create Account
+            <!-- <a href="/kalexAdminPanel">Create Account</a> -->
           </Button>
         </form>
       </div>
@@ -78,5 +102,27 @@ import { Button } from "@/components/ui/button";
 
   <script is:inline>
     document.documentElement.classList.add("dark");
+    document.getElementById("register-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      console.log(data);
+      fetch(
+        "https://dynamyx-kalex-central.azurewebsites.net/api/v1/auth/register/",
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+          mode: "cors",
+        },
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.success) {
+            window.location.href = "/kalexAdminPanel";
+          }
+        });
+    });
   </script>
 </html>
