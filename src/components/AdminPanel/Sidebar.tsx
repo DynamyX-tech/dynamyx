@@ -55,6 +55,7 @@ export default function Sidebar() {
               "https://dynamyx-kalex-central.azurewebsites.net/api/v1/auth/logout",
               {
                 method: "POST",
+                credentials: "include",
               },
             )
               .then((res) => {
