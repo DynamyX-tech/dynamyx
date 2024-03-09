@@ -48,7 +48,27 @@ export default function Sidebar() {
             <Item text="Status" icon={<ActivityLogIcon />} />
           </div>
         </div>
-        <button className="flex items-center justify-center gap-2 self-center rounded-[10px] border border-accent px-10 py-3 text-accent hover:bg-accent hover:text-foreground">
+        <button
+          className="flex items-center justify-center gap-2 self-center rounded-[10px] border border-accent px-10 py-3 text-accent hover:bg-accent hover:text-foreground"
+          onClick={() => {
+            fetch(
+              "https://dynamyx-kalex-central.azurewebsites.net/api/v1/auth/logout",
+              {
+                method: "POST",
+              },
+            )
+              .then((res) => {
+                if (res.ok) {
+                  window.location.href = "/login";
+                } else {
+                  throw new Error("Failed to log out");
+                }
+              })
+              .catch((err) => {
+                alert(err);
+              });
+          }}
+        >
           <ExitIcon />
           log out
         </button>
