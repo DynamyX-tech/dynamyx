@@ -2,6 +2,7 @@
 import "@/styles/kalex.css";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { ReloadIcon } from "@radix-ui/react-icons";
 ---
 
 <!doctype html>
@@ -54,7 +55,10 @@ import { Button } from "@/components/ui/button";
             aria-label="password"
             className=" text-card-foreground placeholder:text-input"
           />
-          <Button type="submit" className="bg-foreground">log in</Button>
+          <Button type="submit" className="bg-foreground">
+            <span id="bText">log in</span>
+            <ReloadIcon id="bIcon" className=" hidden animate-spin" />
+          </Button>
           <a class="self-end text-xs text-primary">Forget password?</a>
         </form>
       </div>
@@ -70,6 +74,8 @@ import { Button } from "@/components/ui/button";
     document.documentElement.classList.add("dark");
     document.getElementById("login-form").addEventListener("submit", (e) => {
       e.preventDefault();
+      document.getElementById("bText").classList.add("hidden");
+      document.getElementById("bIcon").classList.remove("hidden");
       const form = e.target;
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
@@ -98,6 +104,10 @@ import { Button } from "@/components/ui/button";
         .catch((error) => {
           console.log(error);
           alert(error.message);
+        })
+        .finally(() => {
+          document.getElementById("bText").classList.remove("hidden");
+          document.getElementById("bIcon").classList.add("hidden");
         });
     });
   </script>

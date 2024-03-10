@@ -2,6 +2,7 @@
 import "@/styles/kalex.css";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { ReloadIcon } from "@radix-ui/react-icons";
 ---
 
 <!doctype html>
@@ -84,8 +85,8 @@ import { Button } from "@/components/ui/button";
             className=" text-card-foreground placeholder:text-input"
           />
           <Button type="submit" className="col-span-2 bg-foreground">
-            Create Account
-            <!-- <a href="/kalexAdminPanel">Create Account</a> -->
+            <span id="bText">Create Account</span>
+            <ReloadIcon id="bIcon" className=" hidden animate-spin" />
           </Button>
         </form>
       </div>
@@ -104,6 +105,8 @@ import { Button } from "@/components/ui/button";
     document.documentElement.classList.add("dark");
     document.getElementById("register-form").addEventListener("submit", (e) => {
       e.preventDefault();
+      document.getElementById("bText").classList.add("hidden");
+      document.getElementById("bIcon").classList.remove("hidden");
       const form = e.target;
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
@@ -140,6 +143,10 @@ import { Button } from "@/components/ui/button";
           .catch((error) => {
             console.log(error);
             alert(error.message);
+          })
+          .finally(() => {
+            document.getElementById("bText").classList.remove("hidden");
+            document.getElementById("bIcon").classList.add("hidden");
           });
       }
     });
