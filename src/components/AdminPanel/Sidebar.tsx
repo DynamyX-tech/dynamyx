@@ -55,6 +55,10 @@ export default function Sidebar() {
               "https://dynamyx-kalex-central.azurewebsites.net/api/v1/auth/logout",
               {
                 method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
                 credentials: "include",
               },
             )

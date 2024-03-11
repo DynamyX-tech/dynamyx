@@ -1,4 +1,5 @@
 ---
+import "@fontsource/barlow";
 import "@/styles/kalex.css";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -92,14 +93,15 @@ import { ReloadIcon } from "@radix-ui/react-icons";
       )
         .then((res) => {
           if (res.ok) {
-            res.json();
-            window.location.href = "/kalexAdminPanel";
+            return res.json();
           } else {
             throw new Error("invalid credentials!");
           }
         })
         .then((data) => {
           console.log(data);
+          localStorage.setItem("token", data["access-token"]);
+          window.location.href = "/kalexAdminPanel";
         })
         .catch((error) => {
           console.log(error);
