@@ -24,7 +24,7 @@ const Item = (props: navItem) => {
        ${
          selected
            ? " rounded-xl bg-muted py-3 text-foreground"
-           : "py-2 text-primary hover:text-accent"
+           : "text-primary hover:text-white"
        }
       `}
       >
@@ -39,7 +39,7 @@ const Item = (props: navItem) => {
          ${
            selected
              ? " rounded-xl bg-muted py-3 text-foreground"
-             : "py-2 text-primary hover:text-accent"
+             : " text-primary hover:text-white"
          }
         `}
       >
