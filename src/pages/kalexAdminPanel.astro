@@ -1,6 +1,7 @@
 ---
 import "@fontsource/barlow";
-import "@/styles/kalex.css";
+import "@fontsource/space-mono";
+import "@/styles/admin.css";
 import Sidebar from "@/components/AdminPanel/Sidebar";
 ---
 
@@ -17,16 +18,14 @@ import Sidebar from "@/components/AdminPanel/Sidebar";
     <meta name="generator" content={Astro.generator} />
     <title>Kalex Admin Panel</title>
   </head>
-  <body>
-    <main class="flex h-screen w-screen items-center justify-between px-2">
-      <Sidebar client:load />
-      <section class="h-[98vh] w-[85vw] rounded-2xl bg-muted px-12 py-8">
-        <h1 class="text-3xl">Dashboard</h1>
-        <p>Welcome to the dashboard.</p>
-      </section>
-    </main>
+  <body class="flex">
+    <Sidebar client:load />
+    <div class="h-full w-full px-8 py-12">
+      <h1 class="text-[2rem] font-bold text-white">Dashboard</h1>
+      <p class="text-white">Overview of Kalex Dashboard</p>
+    </div>
+    <script is:inline>
+      document.documentElement.classList.add("dark");
+    </script>
   </body>
 </html>
-<script is:inline>
-  document.documentElement.classList.add("dark");
-</script>
