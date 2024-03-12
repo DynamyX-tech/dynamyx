@@ -70,7 +70,6 @@ export default function Sidebar() {
             <Item
               text="Dashboard"
               icon={<LayoutDashboard height={20} />}
-              selected
               open={open}
             />
             {/* <Item
@@ -82,6 +81,7 @@ export default function Sidebar() {
               text="Parking"
               icon={<CarTaxiFront height={20} />}
               open={open}
+              selected
             />
             <Item text="Settings" icon={<Settings height={20} />} open={open} />
           </nav>

@@ -3,6 +3,7 @@ import "@fontsource/barlow";
 import "@fontsource/space-mono";
 import "@/styles/admin.css";
 import Sidebar from "@/components/AdminPanel/Sidebar";
+import Slot from "@/components/AdminPanel/Slot";
 ---
 
 <!doctype html>
@@ -18,12 +19,13 @@ import Sidebar from "@/components/AdminPanel/Sidebar";
     <meta name="generator" content={Astro.generator} />
     <title>Kalex Admin Panel</title>
   </head>
-  <body class="flex">
+  <body class="flex overflow-clip">
     <Sidebar client:load />
-    <div class="h-full w-full px-8 py-12">
-      <h1 class="text-[1.5rem] font-bold text-white">Dashboard</h1>
-      <p class="text-white">Overview of Kalex Dashboard</p>
-    </div>
+    <Slot
+      title="Parking Space"
+      description="Realtime overview of the parking space"
+      client:load
+    />
     <script is:inline>
       document.documentElement.classList.add("dark");
     </script>
