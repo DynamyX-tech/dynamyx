@@ -2,8 +2,7 @@
 import "@fontsource/barlow";
 import "@fontsource/space-mono";
 import "@/styles/admin.css";
-import Sidebar from "@/components/AdminPanel/Sidebar";
-import Slot from "@/components/AdminPanel/Slot";
+import AdminPanel from "@/components/AdminPanel/AdminPanel";
 ---
 
 <!doctype html>
@@ -19,13 +18,8 @@ import Slot from "@/components/AdminPanel/Slot";
     <meta name="generator" content={Astro.generator} />
     <title>Kalex Admin Panel</title>
   </head>
-  <body class="flex overflow-clip">
-    <Sidebar client:load />
-    <Slot
-      title="Parking Space"
-      description="Realtime overview of the parking space"
-      client:load
-    />
+  <body>
+    <AdminPanel client:load />
     <script is:inline>
       document.documentElement.classList.add("dark");
     </script>
