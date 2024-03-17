@@ -16,6 +16,7 @@ export const theme = {
   extend: {
     gridColumn: {
       "span-15": "span 15 / span 15",
+      "span-16": "span 16 / span 16",
     },
     fontFamily: {
       sans: ["Barlow", ..._fontFamily.sans],
