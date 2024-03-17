@@ -14,6 +14,9 @@ export const theme = {
     },
   },
   extend: {
+    gridColumn: {
+      "span-15": "span 15 / span 15",
+    },
     fontFamily: {
       sans: ["Barlow", ..._fontFamily.sans],
       mono: ["space mono", "JetBrains Mono", ..._fontFamily.mono],
@@ -74,4 +77,7 @@ export const theme = {
     },
   },
 };
-export const plugins = [require("tailwindcss-animate"),require('tailwindcss-animated')];
+export const plugins = [
+  require("tailwindcss-animate"),
+  require("tailwindcss-animated"),
+];

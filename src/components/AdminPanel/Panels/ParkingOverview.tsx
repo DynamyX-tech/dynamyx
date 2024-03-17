@@ -9,7 +9,9 @@ export default function ParkingOverview() {
           Level-0
         </div>
       </section>
-      <Layout2 />
+      <section className="flex gap-4">
+        <Layout1 />
+      </section>
     </main>
   );
 }

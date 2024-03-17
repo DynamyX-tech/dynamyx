@@ -39,11 +39,9 @@ export default function Layout1() {
       <RoadArea />
       <RoadArea />
       <RoadArea entry />
+      {/* section2 */}
       <RoadArea />
-      <RoadArea />
-      <RoadArea />
-      <RoadArea />
-      <div className=" col-span-12 flex border-b-2 border-l-2 border-primary">
+      <div className=" col-span-15 flex border-b-2 border-l-2 border-primary">
         <ParkArea id="33" status={false} />
         <ParkArea id="34" status={false} />
         <ParkArea id="35" status={true} />
@@ -55,13 +53,13 @@ export default function Layout1() {
         <ParkArea id="41" status={false} />
         <ParkArea id="42" status={false} />
         <ParkArea id="42.5" status={true} />
-        <ParkArea id="43" status={false} dottedborder="border-none" />
+        <ParkArea id="43" status={true} />
+        <ParkArea id="44" status={false} />
+        <ParkArea id="45" status={false} />
+        <ParkArea id="46" status={false} dottedborder="border-none" />
       </div>
       <RoadArea />
-      <RoadArea />
-      <RoadArea />
-      <RoadArea />
-      <div className=" col-span-12 flex border-l-2">
+      <div className=" col-span-15 flex border-l-2">
         <ParkArea id="44" status={false} />
         <ParkArea id="45" status={false} />
         <ParkArea id="46" status={false} />
@@ -73,7 +71,10 @@ export default function Layout1() {
         <ParkArea id="52" status={false} />
         <ParkArea id="53" status={false} />
         <ParkArea id="53.5" status={true} />
-        <ParkArea id="54" status={false} dottedborder="border-none" />
+        <ParkArea id="54" status={false} />
+        <ParkArea id="55" status={false} />
+        <ParkArea id="56" status={true} />
+        <ParkArea id="54" status={true} dottedborder="border-none" />
       </div>
       <RoadArea />
       <RoadArea />
