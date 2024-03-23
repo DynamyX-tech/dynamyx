@@ -1,92 +1,303 @@
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/Label";
+import { Input } from "@/components/ui/InputNew";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 const RegisterPage = () => {
-  const submission = (e: any) => {
-    e.preventDefault();
-  };
-  return (
-    <body className="flex h-screen w-screen items-center justify-between px-2">
-      <div className="hidden h-[98vh] w-[48vw] rounded-lg bg-muted lg:block"></div>
-      <div className="flex h-[98vh] w-full flex-col items-center justify-between py-8 lg:w-[48vw]">
-        <img src="/Kalexlogo.png" className="h-10" />
-        <div className="flex flex-col gap-12">
-          <div className="flex flex-col items-center">
-            <div className="text-3xl">Create a New Account</div>
-            <h4 className="text-primary">
-              Enter your credentials below to create your account
-            </h4>
-          </div>
-          <form
-            id="register-form"
-            name="Register"
-            className="flex grid-cols-2 flex-col gap-4 lg:grid lg:w-[40vw]"
-            data-netlify="true"
-            method="POST"
-            onSubmit={submission}
+  const [page, setPage] = useState<string>("question");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    username: "",
+    country: "",
+    state: "",
+    city: "",
+    phoneNumber: "",
+    email: "",
+    password: "",
+  });
+  const QuestionPage = () => {
+    return (
+      <main className="flex flex-col items-center justify-center gap-6">
+        <img src="/Kalexlogo.png" className="h-10 w-max" />
+        <h1 className=" text-center text-lg font-bold text-primary">
+          Hey User!{" "}
+          <span className=" font-normal">
+            Before getting started <br></br>kalex answer this question
+          </span>
+        </h1>
+        <div className="flex flex-col gap-2 rounded-xl border px-48 py-12">
+          <h4 className=" text-xl">Are you a parking spot owner?</h4>
+          <button
+            className="group/btn relative block h-10 w-full rounded-md bg-secondary  font-medium "
+            type="submit"
+            onClick={() => setPage("primary")}
           >
-            <Input
-              type="email"
-              placeholder="email address"
-              name="email"
-              required
-              aria-label="email"
-              className=" text-card-foreground placeholder:text-input"
-            />
-            <Input
-              type="text"
-              placeholder="username"
-              name="username"
-              required
-              aria-label="name"
-              className=" text-card-foreground placeholder:text-input"
-            />
-            <Input
-              type="text"
-              placeholder="first_name"
-              name="first_name"
-              required
-              aria-label="first_name"
-              className=" text-card-foreground placeholder:text-input"
-            />
-            <Input
-              type="text"
-              placeholder="last_name"
-              name="last_name"
-              required
-              aria-label="last_name"
-              className=" text-card-foreground placeholder:text-input"
-            />
-            <Input
-              type="password"
-              placeholder="password"
-              name="password"
-              aria-label="password"
-              className=" text-card-foreground placeholder:text-input"
-            />
-            <Input
-              type="password"
-              placeholder="confirm password"
-              name="confirm_password"
-              aria-label="confirm password"
-              className=" text-card-foreground placeholder:text-input"
-            />
-            <Button type="submit" className="col-span-2 bg-foreground">
-              <a href="/kalexAdminPanel">Create Account</a>
-            </Button>
-          </form>
-          <h6 className="self-center text-green-500" id="Salerter"></h6>
-          <h6 className="self-center text-red-500" id="Falerter"></h6>
+            Yes
+            <BottomGradient />
+          </button>
+          <button
+            className="group/btn relative block h-10 w-full rounded-md bg-secondary  font-medium "
+            type="submit"
+          >
+            No
+            <BottomGradient />
+          </button>
         </div>
-        <h6 className="text-xs text-primary">
-          Already have an account in kalex ?
-          <a className="font-bold text-foreground" href="/login">
-            log in
-          </a>
-        </h6>
+      </main>
+    );
+  };
+  const PrimaryReg = () => {
+    // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    //   e.preventDefault();
+    //   const formData = new FormData(e.currentTarget);
+    //   // const data = Object.fromEntries(formData.entries());
+    //   console.log(formData);
+    //   console.log("Form submitted");
+    // };
+    return (
+      <div className="mx-auto w-full max-w-md rounded-none p-4 shadow-input md:rounded-2xl md:p-8 ">
+        <div className="flex h-max w-full items-center justify-center py-4">
+          <img src="/Kalexlogo.png" className="h-10 w-max" />
+        </div>
+        <p className="mt-2 max-w-sm text-center text-sm">
+          Login to aceternity if you can because we don&apos;t have a login flow
+          yet
+        </p>
+
+        <form className="my-8">
+          <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
+            <LabelInputContainer>
+              <Label htmlFor="firstname" className=" text-foreground">
+                First name
+              </Label>
+              <input
+                id="firstname"
+                placeholder="Tyler"
+                type="text"
+                className=" flex h-10 w-full rounded-md border-none bg-secondary px-2 font-normal text-foreground placeholder:text-muted"
+                required
+                onChange={(e) => {
+                  setFormData({ ...formData, firstName: e.target.value });
+                }}
+              />
+              <BottomGradient />
+            </LabelInputContainer>
+            <LabelInputContainer>
+              <Label htmlFor="lastname" className=" text-foreground">
+                Last name
+              </Label>
+              <input
+                id="lastname"
+                placeholder="Durden"
+                type="text"
+                className=" flex h-10 w-full rounded-md border-none bg-secondary px-2 font-normal text-foreground placeholder:text-muted"
+                // value={formData.lastName}
+                // required
+                // onChange={(e) => {
+                //   setFormData({ ...formData, lastName: e.target.value });
+                // }}
+              />
+            </LabelInputContainer>
+          </div>
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="password" className=" text-foreground">
+              Username
+            </Label>
+            <input
+              id="username"
+              type="text"
+              placeholder="kannanaksh"
+              className=" flex h-10 w-full rounded-md border-none bg-secondary px-2 font-normal text-foreground placeholder:text-muted"
+              // value={formData.username}
+              // required
+              // onChange={(e) => {
+              //   setFormData({ ...formData, username: e.target.value });
+              // }}
+            />
+          </LabelInputContainer>
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="password" className=" text-foreground">
+              Country
+            </Label>
+            <input
+              id="country"
+              type="text"
+              placeholder="India"
+              className=" flex h-10 w-full rounded-md border-none bg-secondary px-2 font-normal text-foreground placeholder:text-muted"
+              // value={formData.country}
+              // onChange={(e) => {
+              //   setFormData({ ...formData, country: e.target.value });
+              // }}
+            />
+          </LabelInputContainer>
+          <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
+            <LabelInputContainer>
+              <Label htmlFor="firstname" className=" text-foreground">
+                State
+              </Label>
+              <input
+                id="state"
+                placeholder="kerala"
+                type="text"
+                className=" flex h-10 w-full rounded-md border-none bg-secondary px-2 font-normal text-foreground placeholder:text-muted"
+                // value={formData.state}
+                // onChange={(e) => {
+                //   setFormData({ ...formData, state: e.target.value });
+                // }}
+              />
+            </LabelInputContainer>
+            <LabelInputContainer>
+              <Label htmlFor="lastname" className=" text-foreground">
+                City
+              </Label>
+              <input
+                id="city"
+                placeholder="Attingal"
+                type="text"
+                className=" flex h-10 w-full rounded-md border-none bg-secondary px-2 font-normal text-foreground placeholder:text-muted"
+                // value={formData.city}
+                // onChange={(e) => {
+                //   setFormData({ ...formData, city: e.target.value });
+                // }}
+              />
+            </LabelInputContainer>
+          </div>
+          <button
+            className="group/btn relative block h-10 w-full rounded-md "
+            type="submit"
+            // onClick={() => setPage("secondary")}
+          >
+            Continue &rarr;
+            <BottomGradient />
+          </button>
+        </form>
       </div>
-    </body>
-  );
+    );
+  };
+  const SecondaryReg = () => {
+    // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    //   e.preventDefault();
+    //   console.log("Form submitted");
+    // };
+    return (
+      <div className="mx-auto w-full max-w-md rounded-none p-4 shadow-input md:rounded-2xl md:p-8 ">
+        <div className="flex h-max w-full items-center justify-center py-4">
+          <img src="/Kalexlogo.png" className="h-10 w-max" />
+        </div>
+        <p className="mt-2 max-w-sm text-center text-sm">
+          Login to aceternity if you can because we don&apos;t have a login flow
+          yet
+        </p>
+
+        <form className="my-8">
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="email" className=" text-foreground">
+              PhoneNumber
+            </Label>
+            <input
+              id="phonenumber"
+              placeholder="9995176200"
+              type="text"
+              value={formData.phoneNumber}
+              className=" flex h-10 w-full rounded-md border-none bg-secondary px-2 font-normal text-foreground placeholder:text-muted"
+              onChange={(e) => {
+                setFormData({ ...formData, phoneNumber: e.target.value });
+              }}
+            />
+          </LabelInputContainer>
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="email" className=" text-foreground">
+              Email Address
+            </Label>
+            <input
+              id="email"
+              placeholder="projectmayhem@fc.com"
+              type="email"
+              value={formData.email}
+              className=" flex h-10 w-full rounded-md border-none bg-secondary px-2 font-normal text-foreground placeholder:text-muted"
+              onChange={(e) => {
+                setFormData({ ...formData, email: e.target.value });
+              }}
+            />
+          </LabelInputContainer>
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="password" className=" text-foreground">
+              Password
+            </Label>
+            <input
+              id="password"
+              placeholder="••••••••"
+              type="password"
+              value={formData.password}
+              className=" flex h-10 w-full rounded-md border-none bg-secondary px-2 font-normal text-foreground placeholder:text-muted"
+              onChange={(e) => {
+                e.preventDefault();
+                setFormData({ ...formData, password: e.target.value });
+              }}
+            />
+          </LabelInputContainer>
+          <LabelInputContainer className="mb-8">
+            <Label htmlFor="twitterpassword" className=" text-foreground">
+              Confirm Password
+            </Label>
+            <input
+              id="twitterpassword"
+              placeholder="••••••••"
+              type="twitterpassword"
+              className=" flex h-10 w-full rounded-md border-none bg-secondary px-2 font-normal text-foreground placeholder:text-muted"
+            />
+          </LabelInputContainer>
+
+          <button
+            className="group/btn relative block h-10 w-full rounded-md "
+            type="submit"
+            onClick={() => {
+              setPage("question");
+              console.log(formData);
+            }}
+          >
+            Continue &rarr;
+            <BottomGradient />
+          </button>
+        </form>
+      </div>
+    );
+  };
+  //main
+  {
+    if (page === "question") {
+      return <QuestionPage />;
+    }
+    if (page === "primary") {
+      return <PrimaryReg />;
+    }
+    if (page === "secondary") {
+      return <SecondaryReg />;
+    }
+  }
 };
 
 export default RegisterPage;
+const BottomGradient = () => {
+  return (
+    <>
+      <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
+      <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
+    </>
+  );
+};
+
+const LabelInputContainer = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div className={cn("flex w-full flex-col space-y-2", className)}>
+      {children}
+    </div>
+  );
+};

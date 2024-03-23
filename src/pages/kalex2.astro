@@ -1,0 +1,235 @@
+---
+import Servicenav from "@/components/kalex/Servicenav.tsx";
+import CaseCard from "@/components/kalex/CaseCard.tsx";
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "@/components/kalex/Navbar.tsx";
+import QuestionCard from "@/components/kalex/QuestionCard";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+---
+
+<script
+  is:inline
+  src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"
+></script>
+<Layout title="Kalex by DynamyX | Where we build things that matter.">
+  <main class="font-sans2 min-h-screen bg-background pt-12 text-foreground">
+    <BackgroundBeams client:load />
+    <section class="isolate px-8 md:px-20 xl:px-64">
+      <Navbar client:load />
+    </section>
+    <section
+      class="isolate flex flex-col items-center justify-center gap-8 px-8 pt-40 md:px-20 xl:px-64"
+      id="hero"
+    >
+      <div class="flex flex-row items-center gap-6">
+        <hr class="h-px md:w-[72px]" />
+        <h5
+          class="text-base font-medium uppercase text-primary md:tracking-[0.25rem]"
+        >
+          Igniting Urban Evolution
+        </h5>
+        <hr class="h-px md:w-[72px]" />
+      </div>
+      <h2
+        class="text-center text-[3rem] font-light leading-[1.25] tracking-[3px]"
+      >
+        Transforming Urban Parking from<br /><span class="font-bold"
+          >chaos to <span class="">seamless flow.</span></span
+        >
+      </h2>
+      <p class="max-w-[400px] text-center text-base font-normal text-primary">
+        In the urban hustle, where parking is a daily challenge, Kalex is your
+        guiding light.
+      </p>
+      <div
+        class="flex h-16 flex-row items-center justify-between rounded-full bg-primary pl-6 pr-[2px] md:w-[550px]"
+      >
+        <input type="email" placeholder="Enter Your Email" />
+        <button class="h-[60px] w-64 rounded-full bg-background"
+          >Request Demo</button
+        >
+      </div>
+    </section>
+    <section
+      id="about"
+      class="flex w-full flex-col flex-wrap items-center justify-center gap-8 px-8 pb-20 pt-48 md:flex-row md:px-20 xl:px-64"
+    >
+      <div class="flex flex-col items-center gap-6 text-foreground">
+        <h5 class="text-xl font-medium tracking-[3px]">
+          What is <span class="text-2xl text-accent">Kalex ?</span>
+        </h5>
+        <p class="w-[75%] text-center text-[17px]">
+          In the depths of the ancient forest, where sunlight filters through
+          the canopy like shards of gold, lies the tranquil village of Elondor.
+          Here, whispers of old tales dance on the gentle breeze, weaving a
+          tapestry of lore that echoes through the moss-laden trees. Legends
+          speak of a time when the spirits of the forest roamed freely,
+          intertwining their magic with the very roots of the earth. Within
+          Elondor's walls, elders recount stories of heroes who once walked
+          these enchanted lands, their bravery immortalized in the songs of
+          bards and the carvings of artisans. Yet, beneath the surface
+          tranquility, shadows stir, hinting at secrets buried deep within the
+          heart of the forest, waiting to be unearthed by those bold enough to
+          seek them.
+        </p>
+      </div>
+    </section>
+  </main>
+  <section
+    id="dashboard"
+    class="pt-20 pb-20 px-8 md:px-20 xl:px-64"
+  >
+  <img src="dashboard_MP.webp" class="">
+  </section>
+  <section
+    id="features"
+    class="flex flex-col flex-wrap gap-8 px-8 pt-40 md:flex-row md:justify-between md:px-20 xl:px-64"
+  >
+    <div class="flex flex-col gap-6 self-center">
+      <div class="flex flex-row items-center gap-6 text-accent">
+        <h5 class="font-medium uppercase tracking-[0.25rem]">Features</h5>
+        <hr class="h-px w-[72px] border-accent" />
+      </div>
+      <h2 class="text-xl font-light leading-[1.25] tracking-[3px]">
+        Explore the Versatility of<br /><span class="text-2xl font-bold"
+          >Kalex</span
+        >
+      </h2>
+    </div>
+    <div class="flex flex-col gap-4 md:grid md:grid-flow-col md:grid-rows-2">
+      <CaseCard
+        title="Smart Parking"
+        description="Receive real-time updates on parking space availability, eliminating the hassle of searching for a spot."
+      />
+      <CaseCard
+        title="Reservation"
+        description="Secure your parking space in advance with our reservation feature, giving you peace of mind and eliminating last-minute uncertainties."
+      />
+      <CaseCard
+        title="Adaptive Pricing"
+        description="Experience cost-effective parking solutions with our dynamic pricing, optimizing space utilization for both users and providers."
+      />
+      <CaseCard
+        title="User Convenience"
+        description="Our user-friendly interface and seamless functionalities redefine your parking experience, making it convenient and stress-free."
+      />
+    </div>
+  </section>
+  <section id="roadmap" class="px-8 pt-36 md:px-20 lg:h-[40rem] xl:px-64">
+    <div
+      class="flex flex-row items-center justify-center gap-6 pb-4 text-accent"
+    >
+      <hr class="h-px w-[72px] border-accent" />
+      <h5 class="font-medium uppercase tracking-[0.25rem]">Road Map</h5>
+      <hr class="h-px w-[72px] border-accent" />
+    </div>
+    <h2 class="text-center text-xl font-light leading-[1.25] tracking-[3px]">
+      The Kalex Roadmap to Seamless<br /><span class="text-2xl font-bold"
+        >Parking Solutions</span
+      >
+    </h2>
+  </section>
+  <section
+    id="services"
+    class="flex flex-row items-center px-8 pt-36 md:px-20 xl:px-64"
+  >
+    <div class="flex w-full flex-col gap-6">
+      <div class="flex flex-row items-center gap-6 text-accent">
+        <h5 class="font-medium uppercase tracking-[0.25rem]">Services</h5>
+        <hr class="h-px w-[72px] border-accent" />
+      </div>
+      <h2 class="text-xl font-light leading-[1.25] tracking-[3px]">
+        Our Range of Premier Services<br /> at <span class="text-2xl font-bold"
+          >Kalex</span
+        >
+      </h2>
+      <Servicenav client:load />
+    </div>
+  </section>
+  <section id="faq" class="px-8 pb-20 pt-40 md:px-20 xl:px-64">
+    <div class="flex w-full flex-wrap items-center justify-between">
+      <dotlottie-player
+        class="hidden md:block"
+        src="https://lottie.host/32faba50-d9ce-458b-a443-c1874f53e8f1/SOCizeH2Uu.json"
+        background="transparent"
+        speed="0.5"
+        style="width: 500px; height: 500px;"
+        loop
+        autoplay></dotlottie-player>
+      <div>
+        <div class="flex flex-row items-center gap-6 text-accent">
+          <h5 class="font-medium uppercase tracking-[0.25rem]">FAQ</h5>
+          <hr class="h-px w-[72px] border-accent" />
+        </div>
+        <h2 class="pt-6 text-xl font-light leading-[1.25] tracking-[3px]">
+          Frequently Asked<br /><span class="text-2xl font-bold">Questions</span
+          >
+        </h2>
+        <div class="flex flex-col gap-3 pt-6">
+          <QuestionCard
+            question="How does Kalex work?"
+            answer="Kalex operates through a sophisticated system integrating advanced sensors and data analytics. Real-time updates on parking availability are provided, ensuring users stay informed with the latest information through our user-friendly platforms."
+            default
+            client:load
+          />
+          <QuestionCard
+            question="How does the real-time availability update work?"
+            answer="Our system utilizes advanced sensors and data analytics to provide accurate real-time updates on parking space availability, ensuring users have the latest information at their fingertips."
+            client:load
+          />
+          <QuestionCard
+            question="Is the mobile app available for both iOS and Android?"
+            answer="Yes, the Kalex mobile app is compatible with both iOS and Android devices, ensuring a seamless experience for a wide range of users."
+            client:load
+          />
+          <QuestionCard
+            question="How can businesses integrate Kalex into their parking facilities?"
+            answer="Businesses register on our website, download our software, and connect it to their parking infrastructure, including ramps and sensors, to enable real-time parking management through the Kalex platform."
+            client:load
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-secondary">
+    <div
+      class="container mx-auto flex flex-col items-center justify-between px-6 py-8 lg:flex-row"
+    >
+      <div class="flex flex-col items-start gap-2">
+        <img src="/Kalexlogo.png" alt="Kalex" class="h-12" />
+        <p class="text-sm text-foreground dark:text-gray-400">
+          Kalex is a product of DynamyX
+        </p>
+      </div>
+      <div
+        class="flex flex-wrap items-center justify-center gap-4 pt-6 lg:gap-6 lg:pt-0"
+      >
+        <a
+          href="#"
+          class="text-sm text-foreground transition-colors duration-300 hover:text-blue-500"
+        >
+          Home
+        </a>
+        {
+          [
+            { title: "Features", href: "#features" },
+            { title: "Services", href: "#services" },
+            { title: "FAQ", href: "#faq" },
+          ].map((data) => (
+            <a
+              href={data.href}
+              class="text-sm  text-foreground transition-colors duration-300 hover:text-blue-500 "
+            >
+              {data.title}
+            </a>
+          ))
+        }
+      </div>
+
+      <p class="pt-6 text-sm text-gray-500 lg:pt-0 dark:text-gray-400">
+        © Copyright {new Date().getFullYear()} DynamyX.
+      </p>
+    </div>
+  </footer>
+</Layout>

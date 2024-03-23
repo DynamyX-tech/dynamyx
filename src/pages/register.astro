@@ -1,9 +1,11 @@
 ---
 import "@fontsource/barlow";
-import "@/styles/kalex.css";
+import "@/styles/kalex2.css";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ReloadIcon } from "@radix-ui/react-icons";
+// import { API_KEY } from "@/lib/ApiData"
+import RegisterPage from "@/components/kalex/RegisterPage";
 ---
 
 <!doctype html>
@@ -19,8 +21,8 @@ import { ReloadIcon } from "@radix-ui/react-icons";
     <meta name="generator" content={Astro.generator} />
     <title>Kalex register Page</title>
   </head>
-  <body class="flex h-screen w-screen items-center justify-between px-2">
-    <div class="hidden h-[98vh] w-[48vw] rounded-lg bg-muted lg:block"></div>
+  <body class="flex font-Inter flex-col h-screen w-screen items-center justify-center">
+    <!-- <RegisterPage client:load/> -->
     <div
       class="flex h-[98vh] w-full flex-col items-center justify-between py-8 lg:w-[48vw]"
     >
@@ -72,6 +74,34 @@ import { ReloadIcon } from "@radix-ui/react-icons";
             className=" text-card-foreground placeholder:text-input"
           />
           <Input
+          type="text"
+          placeholder="country"
+          name="country"
+          aria-label="country"
+          className=" text-card-foreground placeholder:text-input"
+        />
+        <Input
+          type="text"
+          placeholder="state"
+          name="state"
+          aria-label="state"
+          className=" text-card-foreground placeholder:text-input"
+        />
+        <Input
+          type="text"
+          placeholder="city"
+          name="city"
+          aria-label="city"
+          className=" text-card-foreground placeholder:text-input"
+        />
+        <Input
+          type="text"
+          placeholder="phone_number"
+          name="phone_number"
+          aria-label="phone_number"
+          className=" text-card-foreground placeholder:text-input"
+        />
+          <Input
             type="password"
             placeholder="password"
             name="password"
@@ -120,7 +150,7 @@ import { ReloadIcon } from "@radix-ui/react-icons";
         return;
       } else {
         fetch(
-          "https://dynamyx-kalex-central.azurewebsites.net/api/v1/auth/register",
+          "http://127.0.0.1:8000/api/v1/auth/register",
           {
             method: "POST",
             body: JSON.stringify(data),
@@ -150,6 +180,6 @@ import { ReloadIcon } from "@radix-ui/react-icons";
             document.getElementById("bIcon").classList.add("hidden");
           });
       }
-    });
+    }); 
   </script>
 </html>
