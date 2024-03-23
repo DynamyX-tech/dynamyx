@@ -1,0 +1,185 @@
+---
+import "@fontsource/barlow";
+import "@/styles/kalex2.css";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { ReloadIcon } from "@radix-ui/react-icons";
+// import { API_KEY } from "@/lib/ApiData"
+import RegisterPage from "@/components/kalex/RegisterPage";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Building amazing solutions that matter."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Kalex register Page</title>
+  </head>
+  <body class="flex font-Inter flex-col h-screen w-screen items-center justify-center">
+    <!-- <RegisterPage client:load/> -->
+    <div
+      class="flex h-[98vh] w-full flex-col items-center justify-between py-8 lg:w-[48vw]"
+    >
+      <img src="/Kalexlogo.png" class="h-10" />
+      <div class="flex flex-col gap-12">
+        <div class="flex flex-col items-center">
+          <div class="text-3xl">Create a New Account</div>
+          <h4 class="text-primary">
+            Enter your credentials below to create your account
+          </h4>
+        </div>
+        <form
+          id="register-form"
+          name="Register"
+          class="flex grid-cols-2 flex-col gap-4 lg:grid lg:w-[40vw]"
+          data-netlify="true"
+          method="POST"
+        >
+          <Input
+            type="email"
+            placeholder="email address"
+            name="email"
+            required
+            aria-label="email"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
+            type="text"
+            placeholder="username"
+            name="username"
+            required
+            aria-label="name"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
+            type="text"
+            placeholder="first_name"
+            name="first_name"
+            required
+            aria-label="first_name"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
+            type="text"
+            placeholder="last_name"
+            name="last_name"
+            required
+            aria-label="last_name"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
+          type="text"
+          placeholder="country"
+          name="country"
+          aria-label="country"
+          className=" text-card-foreground placeholder:text-input"
+        />
+        <Input
+          type="text"
+          placeholder="state"
+          name="state"
+          aria-label="state"
+          className=" text-card-foreground placeholder:text-input"
+        />
+        <Input
+          type="text"
+          placeholder="city"
+          name="city"
+          aria-label="city"
+          className=" text-card-foreground placeholder:text-input"
+        />
+        <Input
+          type="text"
+          placeholder="phone_number"
+          name="phone_number"
+          aria-label="phone_number"
+          className=" text-card-foreground placeholder:text-input"
+        />
+          <Input
+            type="password"
+            placeholder="password"
+            name="password"
+            aria-label="password"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
+            type="password"
+            placeholder="confirm password"
+            name="confirm_password"
+            aria-label="confirm password"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Button type="submit" className="col-span-2 bg-foreground">
+            <span id="bText">Create Account</span>
+            <ReloadIcon id="bIcon" className=" hidden animate-spin" />
+          </Button>
+        </form>
+      </div>
+      <h6 class="text-xs text-primary">
+        Already have an account in kalex ?<a
+          class="font-bold text-foreground"
+          href="/login"
+        >
+          log in</a
+        >
+      </h6>
+    </div>
+  </body>
+
+  <script is:inline>
+    document.documentElement.classList.add("dark");
+    document.getElementById("register-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      document.getElementById("bText").classList.add("hidden");
+      document.getElementById("bIcon").classList.remove("hidden");
+      const form = e.target;
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      console.log(data);
+      if (data.password !== data.confirm_password) {
+        alert("passwords do not match");
+        return;
+      } else if (data.password.length < 8) {
+        alert("password must be at least 8 characters long");
+        return;
+      } else {
+        fetch(
+          "http://127.0.0.1:8000/api/v1/auth/register",
+          {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          },
+        )
+          .then((res) => {
+            if (res.ok) {
+              alert("Account created successfully login to continue");
+              res.json();
+              window.location.href = "/login";
+            } else {
+              throw new Error("An error occurred while fetching data");
+            }
+          })
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            console.log(error);
+            alert(error.message);
+          })
+          .finally(() => {
+            document.getElementById("bText").classList.remove("hidden");
+            document.getElementById("bIcon").classList.add("hidden");
+          });
+      }
+    }); 
+  </script>
+</html>
