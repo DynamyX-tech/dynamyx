@@ -13,7 +13,7 @@ const data: Data = {
     title: "Mobile App",
     description:
       "Elevate your parking experience with the Kalex Mobile App. Seamlessly access real-time parking updates, reserve your preferred spots, and effortlessly manage transactions—all at your fingertips. Our intuitive and feature-rich app ensures convenience and control wherever your urban journey takes you.",
-    image: "/kalexMobile.png",
+    image: "/kalexMobile.webp",
   },
   dashboard: {
     title: "Dashboard",
@@ -46,45 +46,24 @@ const Servicenav = () => {
   }, [selected]);
 
   return (
-    <div className=" grid w-[100%] grid-cols-1 items-center justify-between gap-8 xl:grid-cols-2">
+    <div className=" grid w-[100%] grid-cols-1 items-center justify-between gap-8 self-center xl:grid-cols-2">
+      <img
+        src={data[selected].image}
+        className=" h-[60vh] w-full object-contain"
+        ref={imgRef}
+      ></img>
       <div className="flex flex-col gap-8 text-primary ">
-        <div className="relative isolate flex h-14 w-72 items-center justify-center rounded-full border border-primary font-medium md:w-[440px]">
-          <div
-            className={`absolute top-0 -z-10 h-full w-1/2 rounded-full bg-primary text-background ${
-              selected == "mobileapp" ? "left-0" : "left-1/2"
-            } transition-all duration-500 ease-in-out`}
-          ></div>
-          <button
-            className={`z-10 flex h-full w-36 items-center justify-center md:w-[220px] ${
-              selected == "mobileapp" ? "text-black" : ""
-            }`}
-            onClick={() => {
-              setSelected("mobileapp");
-            }}
-          >
-            Mobile App
-          </button>
-          <button
-            className={`z-10 flex h-full w-36 items-center justify-center md:w-[220px] ${
-              selected == "dashboard" ? "text-black" : ""
-            }`}
-            onClick={() => {
-              setSelected("dashboard");
-            }}
-          >
-            Dashboard
-          </button>
+        <div className="flex flex-row items-center gap-6 text-accent">
+          <h5 className="font-medium uppercase tracking-[0.25rem]">
+            Abour Our
+          </h5>
+          <hr className="h-px w-[72px] border-accent" />
         </div>
         <h4 className="text-xl text-foreground md:w-96">
           {data[selected].title}
         </h4>
         <p className="md:w-[480px]">{data[selected].description}</p>
       </div>
-      <img
-        src={data[selected].image}
-        className="mt-10 h-[50vh] w-full object-contain md:max-w-full"
-        ref={imgRef}
-      ></img>
     </div>
   );
 };

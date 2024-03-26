@@ -6,6 +6,7 @@ import Navbar from "@/components/kalex/Navbar.tsx";
 import QuestionCard from "@/components/kalex/QuestionCard";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+import { HeroScrollDemo } from "@/components/kalex/DashboardScroll";
 ---
 
 <script
@@ -53,38 +54,50 @@ import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
     </section>
     <section
       id="about"
-      class="flex w-full flex-col flex-wrap items-center justify-center gap-8 px-8 pb-20 pt-48 md:flex-row md:px-20 xl:px-64"
+      class="flex w-full flex-col flex-wrap items-center justify-center gap-8 px-8 pt-48 pb-32 md:flex-row md:px-20 xl:px-64"
     >
       <div class="flex flex-col items-center gap-6 text-foreground">
         <h5 class="text-xl font-medium tracking-[3px]">
           What is <span class="text-2xl text-accent">Kalex ?</span>
         </h5>
         <p class="w-[75%] text-center text-[17px]">
-          In the depths of the ancient forest, where sunlight filters through
-          the canopy like shards of gold, lies the tranquil village of Elondor.
-          Here, whispers of old tales dance on the gentle breeze, weaving a
-          tapestry of lore that echoes through the moss-laden trees. Legends
-          speak of a time when the spirits of the forest roamed freely,
-          intertwining their magic with the very roots of the earth. Within
-          Elondor's walls, elders recount stories of heroes who once walked
-          these enchanted lands, their bravery immortalized in the songs of
-          bards and the carvings of artisans. Yet, beneath the surface
-          tranquility, shadows stir, hinting at secrets buried deep within the
-          heart of the forest, waiting to be unearthed by those bold enough to
-          seek them.
+          Kalex is a comprehensive solution for parking management aimed at
+          providing ease of operation and parking status availability for
+          parking space owners and drivers for optimized urban landscape usage.
+          It is a dynamic digital solution streamlining urban parking through
+          real-time availability updates, reservation capabilities , and
+          adaptive pricing to optimize space utilization and enchance user
+          convienience
         </p>
       </div>
     </section>
   </main>
+  <HeroScrollDemo client:load />
   <section
-    id="dashboard"
-    class="pt-20 pb-20 px-8 md:px-20 xl:px-64"
+    id="services"
+    class="flex flex-row items-center px-8 pt-12 pb-32 md:px-20 xl:px-64"
   >
-  <img src="dashboard_MP.webp" class="">
+    <div class="flex w-full flex-col gap-6">
+      <Servicenav client:load />
+    </div>
+  </section>
+  <section id="roadmap" class="px-8 pt-16 md:px-20 lg:h-[40rem] xl:px-64">
+    <div
+      class="flex flex-row items-center justify-center gap-6 pb-4 text-accent"
+    >
+      <hr class="h-px w-[72px] border-accent" />
+      <h5 class="font-medium uppercase tracking-[0.25rem]">Road Map</h5>
+      <hr class="h-px w-[72px] border-accent" />
+    </div>
+    <h2 class="text-center text-xl font-light leading-[1.25] tracking-[3px]">
+      The Kalex Roadmap to Seamless<br /><span class="text-2xl font-bold"
+        >Parking Solutions</span
+      >
+    </h2>
   </section>
   <section
     id="features"
-    class="flex flex-col flex-wrap gap-8 px-8 pt-40 md:flex-row md:justify-between md:px-20 xl:px-64"
+    class="flex flex-col flex-wrap gap-8 px-8 md:flex-row md:justify-between md:px-20 xl:px-64"
   >
     <div class="flex flex-col gap-6 self-center">
       <div class="flex flex-row items-center gap-6 text-accent">
@@ -114,37 +127,6 @@ import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
         title="User Convenience"
         description="Our user-friendly interface and seamless functionalities redefine your parking experience, making it convenient and stress-free."
       />
-    </div>
-  </section>
-  <section id="roadmap" class="px-8 pt-36 md:px-20 lg:h-[40rem] xl:px-64">
-    <div
-      class="flex flex-row items-center justify-center gap-6 pb-4 text-accent"
-    >
-      <hr class="h-px w-[72px] border-accent" />
-      <h5 class="font-medium uppercase tracking-[0.25rem]">Road Map</h5>
-      <hr class="h-px w-[72px] border-accent" />
-    </div>
-    <h2 class="text-center text-xl font-light leading-[1.25] tracking-[3px]">
-      The Kalex Roadmap to Seamless<br /><span class="text-2xl font-bold"
-        >Parking Solutions</span
-      >
-    </h2>
-  </section>
-  <section
-    id="services"
-    class="flex flex-row items-center px-8 pt-36 md:px-20 xl:px-64"
-  >
-    <div class="flex w-full flex-col gap-6">
-      <div class="flex flex-row items-center gap-6 text-accent">
-        <h5 class="font-medium uppercase tracking-[0.25rem]">Services</h5>
-        <hr class="h-px w-[72px] border-accent" />
-      </div>
-      <h2 class="text-xl font-light leading-[1.25] tracking-[3px]">
-        Our Range of Premier Services<br /> at <span class="text-2xl font-bold"
-          >Kalex</span
-        >
-      </h2>
-      <Servicenav client:load />
     </div>
   </section>
   <section id="faq" class="px-8 pb-20 pt-40 md:px-20 xl:px-64">
