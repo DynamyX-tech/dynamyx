@@ -27,7 +27,7 @@ import RegisterPage from "@/components/kalex/RegisterPage";
   >
     <BackgroundBeams client:load />
     <div
-      class="flex h-[98vh] w-full flex-col items-center justify-between py-8 lg:w-[48vw]"
+      class="isolate flex h-[98vh] w-full flex-col items-center justify-between py-8 lg:w-[48vw]"
     >
       <img src="/Kalexlogo.png" class="h-10" />
       <div class="flex flex-col gap-12">
@@ -163,9 +163,13 @@ import RegisterPage from "@/components/kalex/RegisterPage";
             if (res.ok) {
               alert("Account created successfully login to continue");
               res.json();
-              window.location.href = "/login";
+              window.location.href = "/kalex";
             } else {
-              throw new Error("An error occurred while fetching data");
+              res.json().then((data) => {
+                for (const key in data) {
+                  alert(`${key}: ${data[key]}`);
+                }
+              });
             }
           })
           .then((data) => {
