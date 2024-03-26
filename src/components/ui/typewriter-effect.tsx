@@ -70,12 +70,7 @@ export const TypewriterEffect = ({
     );
   };
   return (
-    <div
-      className={cn(
-        "text-center text-base font-bold sm:text-xl md:text-3xl lg:text-5xl",
-        className,
-      )}
-    >
+    <div className={cn("text-center font-Inter text-xl font-bold", className)}>
       {renderWords()}
       <motion.span
         initial={{
@@ -90,7 +85,7 @@ export const TypewriterEffect = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "inline-block h-4 w-[4px] rounded-sm bg-blue-500 md:h-6 lg:h-10",
+          "inline-block h-4 w-[4px] rounded-sm bg-accent md:h-6 lg:h-10",
           cursorClassName,
         )}
       ></motion.span>
@@ -140,7 +135,7 @@ export const TypewriterEffectSmooth = ({
   };
 
   return (
-    <div className={cn("my-6 flex space-x-1", className)}>
+    <div className={cn("my-6 hidden space-x-1 font-Inter md:flex", className)}>
       <motion.div
         className="overflow-hidden pb-2"
         initial={{
@@ -156,7 +151,7 @@ export const TypewriterEffectSmooth = ({
         }}
       >
         <div
-          className="lg:text:3xl text-xs font-bold sm:text-base md:text-xl xl:text-5xl"
+          className="text-xs font-bold sm:text-base md:text-xl lg:text-3xl"
           style={{
             whiteSpace: "nowrap",
           }}
@@ -178,7 +173,7 @@ export const TypewriterEffectSmooth = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "block h-4 w-[4px]  rounded-sm bg-blue-500 sm:h-6 xl:h-12",
+          "block h-4 w-[4px]  rounded-sm bg-accent sm:h-6 xl:h-10",
           cursorClassName,
         )}
       ></motion.span>

@@ -1,5 +1,4 @@
 ---
-import Servicenav from "@/components/kalex/Servicenav.tsx";
 import CaseCard from "@/components/kalex/CaseCard.tsx";
 import Layout from "@/layouts/Layout.astro";
 import Navbar from "@/components/kalex/Navbar.tsx";
@@ -7,12 +6,9 @@ import QuestionCard from "@/components/kalex/QuestionCard";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { HeroScrollDemo } from "@/components/kalex/DashboardScroll";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 ---
 
-<script
-  is:inline
-  src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"
-></script>
 <Layout title="Kalex by DynamyX | Where we build things that matter.">
   <main class="font-sans2 min-h-screen bg-background pt-12 text-foreground">
     <BackgroundBeams client:load />
@@ -26,7 +22,7 @@ import { HeroScrollDemo } from "@/components/kalex/DashboardScroll";
       <div class="flex flex-row items-center gap-6">
         <hr class="h-px md:w-[72px]" />
         <h5
-          class="text-base font-medium uppercase text-primary md:tracking-[0.25rem]"
+          class="text-base font-medium uppercase text-accent md:tracking-[0.25rem]"
         >
           Igniting Urban Evolution
         </h5>
@@ -43,24 +39,55 @@ import { HeroScrollDemo } from "@/components/kalex/DashboardScroll";
         In the urban hustle, where parking is a daily challenge, Kalex is your
         guiding light.
       </p>
-      <div
+      <!-- <div
         class="flex h-16 flex-row items-center justify-between rounded-full bg-primary pl-6 pr-[2px] md:w-[550px]"
       >
         <input type="email" placeholder="Enter Your Email" />
         <button class="h-[60px] w-64 rounded-full bg-background"
           >Request Demo</button
         >
-      </div>
+      </div> -->
+
+      <HoverBorderGradient
+        client:load
+        containerClassName="rounded-full"
+        as="button"
+        className="flex h-[60px] items-center space-x-2 bg-background px-12 text-foreground"
+      >
+        <span>Request Demo</span>
+      </HoverBorderGradient>
     </section>
     <section
       id="about"
-      class="flex w-full flex-col flex-wrap items-center justify-center gap-8 px-8 pt-48 pb-32 md:flex-row md:px-20 xl:px-64"
+      class="flex w-full flex-col flex-wrap items-center justify-center gap-8 px-8 pb-32 pt-48 md:flex-row md:px-20 xl:px-64"
     >
       <div class="flex flex-col items-center gap-6 text-foreground">
         <h5 class="text-xl font-medium tracking-[3px]">
           What is <span class="text-2xl text-accent">Kalex ?</span>
         </h5>
-        <p class="w-[75%] text-center text-[17px]">
+        <TypewriterEffectSmooth
+          words={[
+            {
+              text: "Keeping",
+            },
+            {
+              text: "Area",
+            },
+            {
+              text: "Logistically",
+            },
+            {
+              text: "Efficient for",
+            },
+            {
+              text: "eXtraordinary parking",
+            },
+          ]}
+          client:load
+        />
+        <p
+          class="text-justify text-[17px] text-primary md:w-[75%] md:text-center"
+        >
           Kalex is a comprehensive solution for parking management aimed at
           providing ease of operation and parking status availability for
           parking space owners and drivers for optimized urban landscape usage.
@@ -74,26 +101,56 @@ import { HeroScrollDemo } from "@/components/kalex/DashboardScroll";
   </main>
   <HeroScrollDemo client:load />
   <section
+    id="mobileApp"
+    class="flex w-full flex-row flex-wrap items-center justify-center gap-16 px-8 pb-20 md:flex-row"
+  >
+    <img src="/kalexMobile.webp" class="h-[75vh]" />
+    <div class="flex flex-col gap-8 text-primary">
+      <div class="flex flex-row items-center gap-6 text-accent">
+        <h5 class="font-medium uppercase tracking-[0.25rem]">About Our</h5>
+        <hr class="h-px w-[72px] border-accent" />
+      </div>
+      <h4 class="text-xl text-foreground md:w-96">Mobile App</h4>
+      <p class="text-justify md:w-[480px]">
+        Elevate your parking experience with the Kalex Mobile App. Seamlessly
+        access real-time parking updates, reserve your preferred spots, and
+        effortlessly manage transactions—all at your fingertips. Our intuitive
+        and feature-rich app ensures convenience and control wherever your urban
+        journey takes you.
+      </p>
+    </div>
+  </section>
+  <!-- <section
     id="services"
     class="flex flex-row items-center px-8 pt-12 pb-32 md:px-20 xl:px-64"
   >
     <div class="flex w-full flex-col gap-6">
       <Servicenav client:load />
     </div>
-  </section>
-  <section id="roadmap" class="px-8 pt-16 md:px-20 lg:h-[40rem] xl:px-64">
+  </section> -->
+  <section id="roadmap" class="px-8 pb-40 pt-16 md:px-20 xl:px-64">
     <div
       class="flex flex-row items-center justify-center gap-6 pb-4 text-accent"
     >
-      <hr class="h-px w-[72px] border-accent" />
+      <hr class="h-px border-accent md:w-[72px]" />
       <h5 class="font-medium uppercase tracking-[0.25rem]">Road Map</h5>
-      <hr class="h-px w-[72px] border-accent" />
+      <hr class="h-px border-accent md:w-[72px]" />
     </div>
     <h2 class="text-center text-xl font-light leading-[1.25] tracking-[3px]">
       The Kalex Roadmap to Seamless<br /><span class="text-2xl font-bold"
         >Parking Solutions</span
       >
     </h2>
+    <img
+      src="/roadmap.png"
+      alt="roadmap"
+      class="hidden w-screen pt-2 md:block"
+    />
+    <img
+      src="/roadmapmobile.png"
+      alt="roadmap"
+      class="left-0 block w-full pt-8 md:hidden"
+    />
   </section>
   <section
     id="features"
@@ -131,14 +188,7 @@ import { HeroScrollDemo } from "@/components/kalex/DashboardScroll";
   </section>
   <section id="faq" class="px-8 pb-20 pt-40 md:px-20 xl:px-64">
     <div class="flex w-full flex-wrap items-center justify-between">
-      <dotlottie-player
-        class="hidden md:block"
-        src="https://lottie.host/32faba50-d9ce-458b-a443-c1874f53e8f1/SOCizeH2Uu.json"
-        background="transparent"
-        speed="0.5"
-        style="width: 500px; height: 500px;"
-        loop
-        autoplay></dotlottie-player>
+      <img src="/Parking-amico.svg" class="hidden h-[60vh] md:block" />
       <div>
         <div class="flex flex-row items-center gap-6 text-accent">
           <h5 class="font-medium uppercase tracking-[0.25rem]">FAQ</h5>

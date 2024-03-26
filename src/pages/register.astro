@@ -4,6 +4,7 @@ import "@/styles/kalex2.css";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ReloadIcon } from "@radix-ui/react-icons";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 // import { API_KEY } from "@/lib/ApiData"
 import RegisterPage from "@/components/kalex/RegisterPage";
 ---
@@ -21,8 +22,10 @@ import RegisterPage from "@/components/kalex/RegisterPage";
     <meta name="generator" content={Astro.generator} />
     <title>Kalex register Page</title>
   </head>
-  <body class="flex font-Inter flex-col h-screen w-screen items-center justify-center">
-    <!-- <RegisterPage client:load/> -->
+  <body
+    class="flex h-screen w-screen flex-col items-center justify-center font-Inter"
+  >
+    <BackgroundBeams client:load />
     <div
       class="flex h-[98vh] w-full flex-col items-center justify-between py-8 lg:w-[48vw]"
     >
@@ -74,33 +77,33 @@ import RegisterPage from "@/components/kalex/RegisterPage";
             className=" text-card-foreground placeholder:text-input"
           />
           <Input
-          type="text"
-          placeholder="country"
-          name="country"
-          aria-label="country"
-          className=" text-card-foreground placeholder:text-input"
-        />
-        <Input
-          type="text"
-          placeholder="state"
-          name="state"
-          aria-label="state"
-          className=" text-card-foreground placeholder:text-input"
-        />
-        <Input
-          type="text"
-          placeholder="city"
-          name="city"
-          aria-label="city"
-          className=" text-card-foreground placeholder:text-input"
-        />
-        <Input
-          type="text"
-          placeholder="phone_number"
-          name="phone_number"
-          aria-label="phone_number"
-          className=" text-card-foreground placeholder:text-input"
-        />
+            type="text"
+            placeholder="country"
+            name="country"
+            aria-label="country"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
+            type="text"
+            placeholder="state"
+            name="state"
+            aria-label="state"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
+            type="text"
+            placeholder="city"
+            name="city"
+            aria-label="city"
+            className=" text-card-foreground placeholder:text-input"
+          />
+          <Input
+            type="text"
+            placeholder="phone_number"
+            name="phone_number"
+            aria-label="phone_number"
+            className=" text-card-foreground placeholder:text-input"
+          />
           <Input
             type="password"
             placeholder="password"
@@ -149,16 +152,13 @@ import RegisterPage from "@/components/kalex/RegisterPage";
         alert("password must be at least 8 characters long");
         return;
       } else {
-        fetch(
-          "http://127.0.0.1:8000/api/v1/auth/register",
-          {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-              "Content-Type": "application/json",
-            },
+        fetch("http://127.0.0.1:8000/api/v1/auth/register", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json",
           },
-        )
+        })
           .then((res) => {
             if (res.ok) {
               alert("Account created successfully login to continue");
@@ -180,6 +180,6 @@ import RegisterPage from "@/components/kalex/RegisterPage";
             document.getElementById("bIcon").classList.add("hidden");
           });
       }
-    }); 
+    });
   </script>
 </html>
